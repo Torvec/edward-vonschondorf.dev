@@ -1,7 +1,3 @@
-# My Site
+# edward-vonschondorf-dev
 
-My personal space on the web.
-
-## Status
-
-ON HOLD (11 MAY 2025)
+My personal space on the internets.
