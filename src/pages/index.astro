@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/layout.astro";
+import Card from "@/components/card.astro";
+import IntroSection from "@/pages/home/_sections/intro-section.astro";
+import AboutSection from "@/pages/home/_sections/about-section.astro";
+import TechSection from "@/pages/home/_sections/tech-section.astro";
+import ProjectsSection from "@/pages/home/_sections/projects-section.astro";
+import ArcadeSection from "@/pages/home/_sections/arcade-section.astro";
+import BlogSection from "@/pages/home/_sections/blog-section.astro";
+import NowSection from "@/pages/home/_sections/now-section.astro";
+---
+
+<Layout
+  title="Front-end, Back-end, Full-stack Developer | Edward Vonschondorf"
+  description="Welcome to my little corner of the internet!">
+  <article class="relative z-2 container mx-auto my-auto max-w-5xl space-y-1.5 px-1.5 xl:space-y-3 xl:px-3 2xl:px-0">
+    <IntroSection />
+    <Card>
+      <TechSection />
+    </Card>
+    <div class="grid gap-1.5 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 xl:gap-3">
+      <div class="md:row-span-2">
+        <AboutSection />
+      </div>
+      <div class="grid grid-cols-2 gap-1.5 md:row-span-2 lg:col-span-2 xl:gap-3">
+        <Card>
+          <ProjectsSection />
+        </Card>
+        <Card>
+          <ArcadeSection />
+        </Card>
+        <Card>
+          <BlogSection />
+        </Card>
+        <Card>
+          <NowSection />
+        </Card>
+      </div>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/layout.astro";
+import PageHeader from "@/components/page-header.astro";
+import Card from "@/components/card.astro";
+import Banner from "@/components/banner.astro";
+
+const projects = (await getCollection("projects")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Projects | Edward Vonschondorf" description="My web development projects.">
+  <article class="relative z-2 container mx-auto max-w-4xl space-y-1.5 px-1.5 lg:space-y-3 lg:px-3 xl:px-0">
+    <PageHeader header="Projects">
+      All of my web development related projects are listed here. Feel free to try them out and look at the source code!
+    </PageHeader>
+    <!-- PROJECTS LIST -->
+    <section class="columns-1 gap-1.5 sm:columns-2 lg:gap-3">
+      {
+        projects.map((project) => (
+          <div class="mb-1.5 break-inside-avoid lg:mb-3">
+            <Card twc="space-y-3">
+              <Banner
+                href={`/projects/${project.id}/`}
+                ariaLabel={`View project: ${project.data.title}`}
+                src={project.data.banner}
+                altText={`Thumbnail for ${project.data.title}`}
+                titleText={`${project.data.title} project`}
+                displayText={"Details »"}
+              />
+              <h2 class="font-bold text-stone-100">
+                <a
+                  href={`/projects/${project.id}/`}
+                  class="group flex w-full flex-col items-baseline text-pretty sm:flex-row sm:gap-12">
+                  <div class="flex w-full items-baseline justify-between overflow-hidden">
+                    <span class="transition-color block text-pretty duration-300 ease-in-out group-hover:text-orange-600">
+                      {project.data.title}
+                    </span>
+                    <span class="block translate-x-full text-xl text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full">
+                      &raquo;
+                    </span>
+                  </div>
+                </a>
+              </h2>
+              <p class="text-stone-300">{project.data.description}</p>
+            </Card>
+          </div>
+        ))
+      }
+    </section>
+  </article>
+</Layout>

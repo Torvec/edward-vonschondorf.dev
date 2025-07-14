@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "@/layouts/layout.astro";
+import Card from "@/components/card.astro";
+import ActionButton from "@/components/action-button.astro";
+import ContentNavigator from "@/components/content-navigator.astro";
+
+export async function getStaticPaths() {
+  // Ascending order (oldest to newest), for the content navigation component
+  const projects = (await getCollection("projects")).sort(
+    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+  );
+
+  return projects.map((project, index) => ({
+    params: { project: project.id },
+    props: { project, index, projects },
+  }));
+}
+
+const { project, index, projects } = Astro.props;
+const { title, description, images, deploy_url, repo_url, tech_stack } = project.data;
+const image_index = 0;
+
+const { Content } = await render(project);
+---
+
+<Layout title={title + " | Edward Vonschondorf"} description={description}>
+  <article class="relative z-2 container mx-auto my-auto max-w-4xl px-1.5 lg:px-3 xl:px-0">
+    <Card>
+      <h1 class="mb-3 text-xl font-bold text-stone-100">{title}</h1>
+      <div class="flex flex-col gap-6 md:flex-row">
+        <!-- IMAGE GALLERY -->
+        <section class="space-y-3 md:w-1/2">
+          <a href={`/projects/${project.id}/gallery/${image_index}`} class="block rounded-xl bg-black py-6 md:py-12">
+            <Image
+              src={images[0]}
+              class="size-full object-contain transition-transform duration-300 ease-in-out hover:scale-90"
+              alt={`${title} screenshot`}
+            />
+          </a>
+          <div class="grid grid-cols-4 gap-1.5 md:grid-cols-2 md:gap-3">
+            {
+              images.map((_, index) => (
+                <span class="block aspect-square rounded-xl bg-black">
+                  <Image
+                    src={images[index]}
+                    class="size-full object-contain transition-transform duration-300 ease-in-out hover:scale-90"
+                    alt={`${title} screenshot`}
+                  />
+                </span>
+              ))
+            }
+          </div>
+        </section>
+        <!-- CONTENT -->
+        <section class="flex flex-col justify-between gap-6 md:w-1/2">
+          <div class="space-y-3">
+            <div class="prose">
+              <Content />
+            </div>
+            <h2 class="font-bold text-stone-100">Tech Stack</h2>
+            <ul class="flex flex-wrap gap-3">
+              {
+                tech_stack.map((tech) => (
+                  <li class="rounded-xl border px-3 py-1 text-sm font-medium text-stone-500">{tech}</li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="flex flex-col gap-3 md:flex-row">
+            <ActionButton href={deploy_url} external>Deployment</ActionButton>
+            <ActionButton href={repo_url} external>Repository</ActionButton>
+          </div>
+        </section>
+      </div>
+    </Card>
+  </article>
+  <ContentNavigator items={projects} currentIndex={index} basePath="projects" contentType="Projects" />
+</Layout>

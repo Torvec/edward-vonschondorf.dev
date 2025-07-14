@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/layout.astro";
+import PageHeader from "@/components/page-header.astro";
+import Card from "@/components/card.astro";
+import FormattedDate from "@/components/formatted-date.astro";
+
+const posts = (await getCollection("now")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const now = posts[0];
+
+const then = posts.slice(1);
+---
+
+<Layout title="Now | Edward Vonschondorf" description="What I'm doing now.">
+  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 px-1.5 lg:space-y-3 lg:px-3 xl:px-0">
+    <PageHeader header="Now">
+      Here you can find out what I'm up to at any given moment and what I was up to before. Inspired by <a
+        href="https://sive.rs/nowff"
+        target="_blank"
+        rel="noopener noreferrer external"
+        class="font-medium text-stone-100 hover:text-orange-600">Derek Sivers /Now page movement</a
+      >.
+    </PageHeader>
+    <!-- NOW -->
+    <Card>
+      <div class="flex gap-12">
+        <span class="block flex-shrink-0 font-medium text-stone-500">
+          <FormattedDate date={now.data.pubDate} />
+        </span>
+        <p class="w-full space-y-1.5 font-medium text-stone-300">
+          {now.data.content.map((content) => <span class="block">{content}</span>)}
+        </p>
+      </div>
+    </Card>
+    <!-- THEN -->
+    <Card>
+      <div class="space-y-6">
+        {
+          then.map((post) => (
+            <div class="flex gap-12">
+              <span class="block flex-shrink-0 text-stone-500">
+                <FormattedDate date={post.data.pubDate} />
+              </span>
+              <p class="w-full space-y-1.5 text-stone-300">
+                {post.data.content.map((content) => (
+                  <span class="block">{content}</span>
+                ))}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </Card>
+  </article>
+</Layout>

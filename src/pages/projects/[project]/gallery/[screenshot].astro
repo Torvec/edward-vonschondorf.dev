@@ -1,0 +1,30 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Gallery from "@/components/gallery.astro";
+
+/* getStaticPaths() is setting up all the possible dynamic routes based on 
+all the projects in the projects collection and all of the images within each project */
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.flatMap((project) =>
+    project.data.images.map((_, index) => ({
+      params: {
+        project: project.id, // Creates a [project]/ directory dynamically
+        screenshot: index.toString(), // Creates an [image] page dynamically
+      },
+    })),
+  );
+}
+
+/* extracting the params from getStaticPaths so they can be used by getEntry 
+to get the specifc project and specific image so the correct elements can be rendered */
+const { project, screenshot } = Astro.params;
+const imageIndex = Number(screenshot);
+
+/* getEntry gets the images and title from the data object within a project object in the projects collection */
+const { data } = await getEntry("projects", project)!;
+const { images, title } = data;
+---
+
+<Gallery title={title} collection="projects" entry={project} images={images} imageIndex={imageIndex} />

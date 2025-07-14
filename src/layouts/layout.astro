@@ -1,0 +1,62 @@
+---
+import { ClientRouter } from "astro:transitions";
+import BaseHead from "@/components/base-head.astro";
+import SiteNavigation from "@/components/site-navigation.astro";
+import { socialLinks } from "@/global-consts";
+
+const currentPage = Astro.url.pathname;
+
+const year = new Date().getFullYear();
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <ClientRouter />
+  </head>
+  <body class="relative flex min-h-screen flex-col bg-stone-950 antialiased">
+    <!-- Background Grid pattern and Gradient -->
+    <div class="bg-grid-lines absolute inset-0 z-0 h-screen opacity-60"></div>
+    <div
+      class="absolute inset-0 z-1 h-screen bg-gradient-to-b from-stone-950/85 via-stone-950/0 to-stone-950 md:from-10% md:to-90%">
+    </div>
+    <!-- Site Header -->
+    <header class="relative z-5 mb-6 w-full md:mt-6 md:mb-12">
+      <SiteNavigation currentPage={currentPage} />
+    </header>
+    <!-- Site Content -->
+    <main class="flex flex-grow flex-col items-center">
+      <slot />
+    </main>
+    <!-- Site Footer -->
+    <footer class="relative z-2 container mx-auto space-y-3 px-1.5 pt-6 text-center text-sm md:pt-12 lg:px-3">
+      <p class="text-stone-500">
+        &copy; {year} Made for fun, with <a
+          href="https://astro.build/"
+          target="_blank"
+          rel="noopener noreferrer external"
+          class="text-stone-300 transition-colors duration-300 ease-in-out hover:text-orange-600">Astro!</a
+        >
+      </p>
+      <ul class="flex flex-wrap justify-center">
+        {
+          socialLinks.map((link) => (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer external"
+                class="group relative block w-full overflow-hidden px-3 pt-1.5 pb-3 text-stone-300 transition-colors duration-300 ease-in-out hover:text-orange-600 md:px-6">
+                <span class="absolute inset-0 hidden translate-y-full bg-linear-to-b from-transparent to-orange-950/40 transition-transform duration-300 ease-in-out group-hover:-translate-y-0 md:block" />
+                <span class="relative">{link.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </footer>
+  </body>
+</html>

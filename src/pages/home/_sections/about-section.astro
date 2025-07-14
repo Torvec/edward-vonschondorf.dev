@@ -1,0 +1,37 @@
+---
+import { getEntry, render } from "astro:content";
+import Card from "@/components/card.astro";
+import { socialLinks } from "@/global-consts";
+
+const about = await getEntry("home", "about")!;
+
+const { Content } = await render(about);
+---
+
+<div class="space-y-1.5 xl:space-y-3">
+  <Card twc="about">
+    <Content />
+  </Card>
+  <Card twc="flex flex-wrap justify-between gap-1.5">
+    {
+      socialLinks.map(
+        ({ name, url, Icon }) =>
+          Icon && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer external"
+              class="group relative rounded-xl border border-stone-600 p-1.5 transition-colors duration-300 ease-in-out hover:border-stone-500 hover:bg-stone-800">
+              <Icon
+                class="size-6 transition-transform duration-300 ease-in-out group-hover:scale-120"
+                aria-label={name}
+              />
+              <span class="invisible absolute -top-5 left-1/2 -translate-x-1/2 text-xs text-stone-400 opacity-0 transition-opacity duration-500 ease-in-out md:group-hover:visible md:group-hover:opacity-100">
+                {name}
+              </span>
+            </a>
+          ),
+      )
+    }
+  </Card>
+</div>

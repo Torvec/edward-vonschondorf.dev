@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import SectionHeader from "@/components/section-header.astro";
+import FormattedDate from "@/components/formatted-date.astro";
+
+const now = (await getCollection("now")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())[0];
+
+const nowPost = now.data.content;
+---
+
+<div class="space-y-3">
+  <SectionHeader href="/now/">Now</SectionHeader>
+  <div class="hidden space-y-1.5 text-stone-300 lg:block">
+    <span class="block text-xs text-stone-400 uppercase">
+      <FormattedDate date={now.data.pubDate} />
+    </span>
+    <p class="space-y-1.5 text-sm">
+      {nowPost.map((post) => <span class="block">{post}</span>)}
+    </p>
+  </div>
+</div>
