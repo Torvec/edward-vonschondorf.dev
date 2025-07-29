@@ -4,12 +4,12 @@ import SectionHeader from "@/components/section-header.astro";
 import Banner from "@/components/banner.astro";
 
 const project = (await getCollection("projects")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )[0];
 ---
 
 <div class="space-y-3">
-  <SectionHeader href="/projects/">Projects</SectionHeader>
+  <SectionHeader href="/projects/">Latest Project</SectionHeader>
   <div class="hidden lg:block">
     <Banner
       href={`/projects/${project.id}/`}
@@ -20,4 +20,5 @@ const project = (await getCollection("projects")).sort(
       displayText={"Details »"}
     />
   </div>
+  <p class="text-stone-300 text-sm">{project.data.description}</p>
 </div>

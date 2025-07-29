@@ -46,7 +46,6 @@ const currentIndex = images[imageIndex];
       </div>
       <div class="grid gap-1.5 md:grid-cols-4 md:gap-3">
         {
-          // @ts-expect-error
           images.map((_, index) => (
             <a
               href={`/${collection}/${entry}/gallery/${index}`}

@@ -5,6 +5,7 @@ banner: "./tic_tac_toe_ultimate_banner.jpg"
 images: ["./tic_tac_toe_ultimate_1.jpg"]
 repo_url: "https://github.com/Torvec/tic-tac-toe-ultimate"
 play_url: "https://tic-tac-toe-ultimate.pages.dev/"
+tech_stack: ["JavaScript"]
 pubDate: 2024-10-14
 ---
 

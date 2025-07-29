@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import profilePic from "@/assets/portrait_gray_transparent_bg.png";
-import { siteLinks } from "@/global-consts";
+import { pageLinks, socialLinks } from "@/global-consts";
 
 const { currentPage } = Astro.props;
 
@@ -10,21 +8,54 @@ const isActive = (href: string) => {
 };
 ---
 
-<nav
-  class="mx-auto flex max-w-full items-center justify-between gap-3 p-1.5 sm:border sm:border-stone-800 sm:bg-stone-800/50 sm:p-3 md:max-w-3xl md:rounded-xl">
+<nav class="z-10 flex h-screen w-12 flex-col border-r border-stone-700 bg-stone-800 pb-6 fixed">
+  <div class="flex grow flex-col justify-between">
+    <div>
+      {
+        pageLinks.map(({ name, href, Icon }) => (
+          <a
+            href={href}
+            class={`group flex h-12 items-center justify-center font-medium hover:bg-stone-700 ${
+              isActive(href) ? "bg-stone-700 text-stone-300" : "text-stone-400"
+            }`}>
+            <Icon
+              class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120"
+              aria-label={name}
+            />
+          </a>
+        ))
+      }
+    </div>
+    <div>
+      {
+        socialLinks.map(({ name, url, Icon }) => (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer external"
+            class="group flex h-12 items-center justify-between hover:bg-stone-700">
+            <Icon
+              class="mx-auto size-6 text-stone-400 transition-all duration-300 ease-in-out group-hover:scale-120"
+              aria-label={name}
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
   <!-- PROFILE PIC : Visible until sm -->
-  <div
+  <!-- <div
     class="max-w-16 place-content-center overflow-hidden rounded-full border border-stone-700 bg-stone-900/50 backdrop-blur-[2px] transition-colors duration-300 ease-in-out hover:border-orange-800 sm:hidden">
     <a href="/">
       <Image src={profilePic} alt="Profile Picture of Me, Edward Vonschondorf" class="size-full object-cover" />
     </a>
-  </div>
+  </div> -->
   <!-- LINK LIST : Hidden below sm, but visible and vertical when button pressed, horizontal above sm breakpoint -->
-  <ul
+  <!-- <ul
     id="menu"
     class="absolute top-0 left-0 z-10 hidden w-full space-y-3 border-b border-stone-800 bg-stone-900 px-6 pt-16 pb-24 font-medium uppercase sm:static sm:flex sm:h-max sm:space-y-0 sm:border-0 sm:p-0">
     {
-      siteLinks.map((link: { href: string; name: string }) => (
+      pageLinks.map((link: { href: string; name: string }) => (
         <li class="flex-grow">
           <a href={link.href} class="group flex gap-0.75 rounded-md py-1.5 pl-3 text-lg hover:bg-stone-800 sm:text-sm">
             <span
@@ -43,9 +74,9 @@ const isActive = (href: string) => {
         </li>
       ))
     }
-  </ul>
+  </ul> -->
   <!-- DROP DOWN MENU BUTTON : Hidden after sm -->
-  <button id="menu-toggle" class="group z-20 cursor-pointer sm:hidden" aria-label="Toggle Menu">
+  <!-- <button id="menu-toggle" class="group z-20 cursor-pointer sm:hidden" aria-label="Toggle Menu">
     <span
       id="menu-open"
       class="block rounded-md border border-stone-700 p-1.5 text-2xl text-white transition-colors duration-150 ease-in-out hover:border-stone-500 hover:bg-stone-900">
@@ -56,7 +87,7 @@ const isActive = (href: string) => {
       class="hidden rounded-md border border-stone-900 p-1.5 text-2xl text-white transition-colors duration-150 ease-in-out hover:border-stone-500 hover:bg-stone-900">
       X
     </span>
-  </button>
+  </button> -->
 </nav>
 <!-- Handles the drop down menu visibility below sm breakpoint -->
 <script is:inline>

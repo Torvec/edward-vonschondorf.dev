@@ -11,6 +11,7 @@ images:
   ]
 repo_url: "https://github.com/Torvec/dog-runner-game"
 play_url: "https://dog-runner-game.pages.dev/"
+tech_stack: ["JavaScript"]
 pubDate: 2024-09-29
 ---
 

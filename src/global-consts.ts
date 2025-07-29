@@ -1,23 +1,36 @@
+import Logo from "@/assets/ev_logo.svg";
+import Projects from "@/assets/projects.svg";
+import Blog from "@/assets/blog.svg";
+import Now from "@/assets/now.svg";
+import Uses from "@/assets/uses.svg";
+import Gmail from "@/assets/gmail.svg";
 import GitHub from "@/assets/github.svg";
 import LinkedIn from "@/assets/linkedin.svg";
 import Bluesky from "@/assets/bluesky.svg";
 import Mastodon from "@/assets/mastodon.svg";
 import YouTube from "@/assets/youtube.svg";
 
-export const siteLinks = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Arcade", href: "/arcade" },
-  { name: "Blog", href: "/blog" },
-  { name: "Now", href: "/now" },
-  { name: "Uses", href: "/uses" },
+export const MY_NAME = "Edward Vonschondorf";
+
+export const MY_ALIAS = "Torvec";
+
+export const MY_EMAIL = "mailto:me@edward-vonschondorf.dev";
+
+export const MY_RESUME = "edward_vonschondorf_resume_06MAY2025.pdf";
+
+export const pageLinks = [
+  { name: "Home", href: "/", Icon: Logo },
+  { name: "Projects", href: "/projects", Icon: Projects },
+  { name: "Blog", href: "/blog", Icon: Blog },
+  { name: "Now", href: "/now", Icon: Now },
+  { name: "Uses", href: "/uses", Icon: Uses },
 ];
 
 export const socialLinks = [
   {
     name: "Email",
-    url: "mailto:me@edward-vonschondorf.dev",
-    Icon: null,
+    url: MY_EMAIL,
+    Icon: Gmail,
   },
   {
     name: "GitHub",
@@ -44,16 +57,7 @@ export const socialLinks = [
     url: "https://www.youtube.com/@edward-vonschondorf-dev",
     Icon: YouTube,
   },
-  {
-    name: "RSS",
-    url: "/blog/rss.xml",
-    Icon: null,
-  },
 ];
-
-export const SITE_TITLE = "Edward Vonschondorf";
-
-export const USERNAME = "Torvec";
 
 export const ISSUE_TITLE = "Article Issue: YOUR ISSUE HERE";
 

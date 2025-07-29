@@ -1,41 +1,89 @@
 ---
 import Layout from "@/layouts/layout.astro";
-import Card from "@/components/card.astro";
-import IntroSection from "@/pages/home/_sections/intro-section.astro";
-import AboutSection from "@/pages/home/_sections/about-section.astro";
-import TechSection from "@/pages/home/_sections/tech-section.astro";
-import ProjectsSection from "@/pages/home/_sections/projects-section.astro";
-import ArcadeSection from "@/pages/home/_sections/arcade-section.astro";
-import BlogSection from "@/pages/home/_sections/blog-section.astro";
-import NowSection from "@/pages/home/_sections/now-section.astro";
+import { socialLinks, pageLinks, MY_EMAIL, MY_RESUME } from "@/global-consts";
+import Banner from "@/components/banner.astro";
+import profilePic from "@/assets/portrait_gray_transparent_bg.png";
+import Chevron from "@/assets/chevron_r.svg";
 ---
 
-<Layout
-  title="Front-end, Back-end, Full-stack Developer | Edward Vonschondorf"
-  description="Welcome to my little corner of the internet!">
-  <article class="relative z-2 container mx-auto my-auto max-w-5xl space-y-1.5 px-1.5 xl:space-y-3 xl:px-3 2xl:px-0">
-    <IntroSection />
-    <Card>
-      <TechSection />
-    </Card>
-    <div class="grid gap-1.5 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 xl:gap-3">
-      <div class="md:row-span-2">
-        <AboutSection />
+<Layout title="Software Developer | Edward Vonschondorf" description="Welcome to my little corner of the internets!">
+  <article class="z-10 mx-auto my-auto max-w-2xl rounded-3xl border border-stone-800 backdrop-blur-xs">
+    <section class="space-y-6 border-b border-stone-800 p-12">
+      <div class="mx-auto max-w-64 overflow-clip rounded-full border-2 border-stone-700 bg-stone-900">
+        <Banner
+          href={"/"}
+          ariaLabel="Profile Picture of Me, Edward Vonschondorf"
+          src={profilePic}
+          altText="Profile Picture of Me, Edward Vonschondorf"
+          titleText="It's-a-me, Edward Vonschondorf!"
+          displayText="Share 🔗"
+        />
       </div>
-      <div class="grid grid-cols-2 gap-1.5 md:row-span-2 lg:col-span-2 xl:gap-3">
-        <Card>
-          <ProjectsSection />
-        </Card>
-        <Card>
-          <ArcadeSection />
-        </Card>
-        <Card>
-          <BlogSection />
-        </Card>
-        <Card>
-          <NowSection />
-        </Card>
+      <div class="space-y-1.5 text-center">
+        <h1 class="text-2xl font-semibold text-stone-100">👋 Hey! I'm Edward Vonschondorf</h1>
+        <h2 class="font-medium text-stone-300">Software Developer (web/game) based in LA.</h2>
       </div>
-    </div>
+      <div class="flex justify-center gap-6">
+        {
+          socialLinks.map(
+            ({ name, url, Icon }) =>
+              name !== "Email" && (
+                <a href={url} target="_blank" rel="noopener noreferrer external" class="group relative text-stone-500">
+                  <Icon
+                    class="group-hover: mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120"
+                    aria-label={name}
+                  />
+                  <span class="invisible absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-stone-400 opacity-0 transition-opacity duration-500 ease-in-out md:group-hover:visible md:group-hover:opacity-100">
+                    {name}
+                  </span>
+                </a>
+              )
+          )
+        }
+      </div>
+    </section>
+    <section
+      class="grid grid-cols-2 divide-x divide-stone-800 border-b border-stone-800 text-center font-bold text-stone-100">
+      <a href={MY_EMAIL} class="py-6">Contact Me</a>
+      <a href={MY_RESUME} download class="py-6">My Resume</a>
+    </section>
+    <section class="space-y-6 border-b border-stone-800 p-12">
+      <div class="space-y-1.5">
+        <h3 class="text-lg font-bold text-stone-100">What I Do</h3>
+        <p class="font-medium text-stone-300">
+          I specialize in JavaScript and TypeScript for both front-end and back-end development, with additional
+          experience in Python and Go. I enjoy creating everything from browser-based games with vanilla JavaScript to
+          full-stack MERN applications and web-based desktop apps using Electron. I'm open to remote or on-site
+          freelance contracts as well as full-time opportunities.
+        </p>
+      </div>
+      <div class="space-y-1.5">
+        <h3 class="text-lg font-bold text-stone-100">Interests & Hobbies</h3>
+        <p class="font-medium text-stone-300">
+          I enjoy running, hiking, traveling, PC gaming, building custom PCs, cooking, and watching movies and anime.
+        </p>
+      </div>
+    </section>
+    <section class="grid grid-cols-4 divide-x divide-stone-800">
+      {
+        pageLinks.map(
+          ({ name, href, Icon }) =>
+            name !== "Home" && (
+              <a href={href} class="flex items-end justify-between p-6">
+                <span class="block grow space-y-6">
+                  <Icon
+                    class="size-6 text-stone-100 transition-all duration-300 ease-in-out group-hover:scale-120"
+                    aria-label={name}
+                  />
+                  <span class="flex items-baseline justify-between">
+                    <span class="font-medium text-stone-100">{name}</span>
+                    <Chevron class="size-3 text-orange-600" />
+                  </span>
+                </span>
+              </a>
+            )
+        )
+      }
+    </section>
   </article>
 </Layout>

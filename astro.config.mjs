@@ -11,6 +11,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://edward-vonschondorf.dev",
   vite: {
+    // @ts-expect-error - Temporary workaround for Tailwind CSS Vite plugin type incompatibility
     plugins: [tailwindcss()],
   },
   integrations: [mdx(), sitemap()],

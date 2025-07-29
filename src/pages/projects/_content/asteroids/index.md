@@ -5,6 +5,7 @@ banner: "./asteroids_banner.jpg"
 images: ["./asteroids_1.jpg"]
 repo_url: "https://github.com/Torvec/asteroids"
 play_url: "https://github.com/Torvec/asteroids"
+tech_stack: ["Python", "PyGame"]
 pubDate: 2025-01-08
 ---
 
