@@ -46,23 +46,6 @@ const blog = defineCollection({
   }),
 });
 
-// const arcade = defineCollection({
-//   loader: glob({
-//     base: "./src/pages/arcade/_content",
-//     pattern: "**/index.{md,mdx}",
-//   }),
-//   schema: ({ image }) =>
-//     z.object({
-//       title: z.string(),
-//       description: z.string(),
-//       banner: image(),
-//       images: z.array(image()),
-//       play_url: z.string(),
-//       repo_url: z.string(),
-//       pubDate: z.date(),
-//     }),
-// });
-
 const now = defineCollection({
   loader: glob({
     base: "./src/pages/now/_content",
