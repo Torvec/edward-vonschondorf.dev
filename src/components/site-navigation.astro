@@ -15,6 +15,7 @@ const isActive = (href: string) => {
         pageLinks.map(({ name, href, Icon }) => (
           <a
             href={href}
+            title={name}
             class={`group flex h-12 items-center justify-center font-medium hover:bg-stone-700 ${
               isActive(href) ? "bg-stone-700 text-stone-300" : "text-stone-400"
             }`}>
@@ -33,6 +34,7 @@ const isActive = (href: string) => {
             href={url}
             target="_blank"
             rel="noopener noreferrer external"
+            title={name}
             class="group flex h-12 items-center justify-between hover:bg-stone-700">
             <Icon
               class="mx-auto size-6 text-stone-400 transition-all duration-300 ease-in-out group-hover:scale-120"

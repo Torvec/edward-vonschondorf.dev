@@ -15,7 +15,7 @@ Full Parts List: https://pcpartpicker.com/list/MNsQLc
 - **Storage**: Crucial P5 Plus 2 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive (x2)
 - **Motherboard**: Asus ROG STRIX B650E-I GAMING WIFI Mini ITX AM5
 - **PSU**: Corsair SF750 (2018) 750 W 80+ Platinum
-- **Case**: FormD T1 - SW Kit - Black w/Anodized Aluminum Mesh
+- **Case**: [FormD T1](https://formdt1.com/) - SW Kit - Black w/Anodized Aluminum Mesh
 
 #### Peripherals:
 
@@ -27,24 +27,26 @@ Full Parts List: https://pcpartpicker.com/list/MNsQLc
 
 ### Laptop
 
-**Framework Laptop 13**
+**[Framework](https://frame.work/laptop13) Laptop 13**
 
 - **CPU**: Intel Core i7-1280P
 - **GPU**: Intel Iris Xe Graphics (Integrated)
 - **RAM**: Crucial 32GB (2 x 16GB) DDR4-3200MHZ CL22
 - **Storage**: Western Digital Black SN850X 2TB
+- **WiFi Card**: AX210 vPro WiFi
 - **Expansion Cards**: 1 x USB-A, 3 x USB-C
 
 ## Software
 
-- Operating System: Microsoft Windows 11 Home (Desktop and Laptop)
-- Windows Subsystem for Linux (WSL) Ubuntu (Desktop)
-- Visual Studio Code
+- **Operating System**: Microsoft Windows 11 Home _(Desktop and Laptop)_
+  - With Windows Subsystem for Linux (WSL) Ubuntu _(Desktop)_
+- **Editor**: Visual Studio Code
 - Figma
 - Excalidraw
 - Irfanview
+- GIMP
 
-## Tech Stack
+## Languages, Frameworks, and Libraries
 
 - JavaScript
 - TypeScript
@@ -52,8 +54,11 @@ Full Parts List: https://pcpartpicker.com/list/MNsQLc
 - Go
 - MySQL
 - MongoDB
+- SQLite
 - React
-- Next.js
 - Astro
+- Next.js
 - Node.js
 - Tailwind CSS
+- GraphQL
+- Electron.js

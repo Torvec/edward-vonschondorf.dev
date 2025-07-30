@@ -7,9 +7,8 @@ import Chevron from "@/assets/chevron_r.svg";
 ---
 
 <Layout title="Software Developer | Edward Vonschondorf" description="Welcome to my little corner of the internets!">
-  <article
-    class="z-10 mx-auto my-auto max-w-2xl overflow-clip rounded-3xl border border-stone-800 backdrop-blur-xs">
-    <section class="space-y-6 border-b border-stone-800 bg-radial-[at_50%_25%] from-stone-800/70 to-transparent p-12">
+  <article class="z-10 mx-auto my-auto max-w-3xl overflow-clip rounded-3xl border border-stone-700 backdrop-blur-xs">
+    <section class="space-y-6 border-b border-stone-700 bg-radial-[at_50%_25%] from-stone-800/70 to-transparent p-12">
       <div class="mx-auto max-w-64 overflow-clip rounded-full border-2 border-stone-700 bg-stone-900">
         <Banner
           href={"/"}
@@ -29,14 +28,16 @@ import Chevron from "@/assets/chevron_r.svg";
           socialLinks.map(
             ({ name, url, Icon }) =>
               name !== "Email" && (
-                <a href={url} target="_blank" rel="noopener noreferrer external" class="group relative text-stone-500">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer external"
+                  title={name}
+                  class="group text-stone-500">
                   <Icon
-                    class="group-hover: mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120"
+                    class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
                     aria-label={name}
                   />
-                  <span class="invisible absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-stone-400 opacity-0 transition-opacity duration-500 ease-in-out md:group-hover:visible md:group-hover:opacity-100">
-                    {name}
-                  </span>
                 </a>
               )
           )
@@ -44,7 +45,7 @@ import Chevron from "@/assets/chevron_r.svg";
       </div>
     </section>
     <section
-      class="grid grid-cols-2 divide-x divide-stone-800 border-b border-stone-800 text-center font-bold text-stone-100">
+      class="grid grid-cols-2 divide-x divide-stone-700 border-b border-stone-700 text-center font-bold text-stone-100">
       <a
         href={MY_EMAIL}
         class="group relative bg-orange-800/20 py-6 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white">
@@ -64,7 +65,7 @@ import Chevron from "@/assets/chevron_r.svg";
       </a>
     </section>
     <section
-      class="space-y-6 border-b border-stone-800 bg-radial-[at_25%_25%] from-stone-800/70 to-transparent to-70% p-12">
+      class="space-y-6 border-b border-stone-700 bg-radial-[at_25%_25%] from-stone-800/70 to-transparent to-70% p-12">
       <div class="space-y-1.5">
         <h3 class="text-lg font-bold text-stone-100">What I Do</h3>
         <p class="text-stone-300">
@@ -81,7 +82,7 @@ import Chevron from "@/assets/chevron_r.svg";
         </p>
       </div>
     </section>
-    <section class="grid grid-cols-4 divide-x divide-stone-800">
+    <section class="grid grid-cols-4 divide-x divide-stone-700">
       {
         pageLinks.map(
           ({ name, href, Icon }) =>

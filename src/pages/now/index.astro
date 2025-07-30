@@ -4,6 +4,7 @@ import Layout from "@/layouts/layout.astro";
 import PageHeader from "@/components/page-header.astro";
 import Card from "@/components/card.astro";
 import FormattedDate from "@/components/formatted-date.astro";
+import NowIcon from "@/assets/now.svg";
 
 const posts = (await getCollection("now")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -14,7 +15,7 @@ const then = posts.slice(1);
 
 <Layout title="Now | Edward Vonschondorf" description="What I'm doing now.">
   <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 px-1.5 lg:space-y-3 lg:px-3 xl:px-0">
-    <PageHeader header="Now">
+    <PageHeader header="Now" Icon={NowIcon}>
       Here you can find out what I'm up to at any given moment and what I was up to before. Inspired by <a
         href="https://sive.rs/nowff"
         target="_blank"
