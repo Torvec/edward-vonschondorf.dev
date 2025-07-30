@@ -4,6 +4,25 @@ import { socialLinks, pageLinks, MY_EMAIL, MY_RESUME } from "@/global-consts";
 import Banner from "@/components/banner.astro";
 import profilePic from "@/assets/portrait_gray_transparent_bg.png";
 import Chevron from "@/assets/chevron_r.svg";
+
+const content = {
+  intro: "👋 Hey! I'm Edward Vonschondorf",
+  subIntro: "Software Developer (web/game) based in LA.",
+  contact: {
+    label: "Contact Me",
+    href: MY_EMAIL,
+  },
+  resume: {
+    label: "My Resume",
+    href: MY_RESUME,
+  },
+  p1Header: "What I Do",
+  p1Content:
+    "I specialize in JavaScript and TypeScript for both front-end and back-end development, with additional experience in Python and Go. I enjoy creating everything from browser-based games with vanilla JavaScript to full-stack MERN applications and web-based desktop apps using Electron. I'm open to remote or on-site freelance contracts as well as full-time opportunities.",
+  p2Header: "Interests & Hobbies",
+  p2Content:
+    "I enjoy running, hiking, traveling, PC gaming, building custom PCs, cooking, and watching movies and anime.",
+};
 ---
 
 <Layout title="Software Developer | Edward Vonschondorf" description="Welcome to my little corner of the internets!">
@@ -20,8 +39,8 @@ import Chevron from "@/assets/chevron_r.svg";
         />
       </div>
       <div class="space-y-1.5 text-center">
-        <h1 class="text-2xl font-semibold text-stone-100">👋 Hey! I'm Edward Vonschondorf</h1>
-        <h2 class="font-medium text-stone-300">Software Developer (web/game) based in LA.</h2>
+        <h1 class="text-2xl font-semibold text-stone-100">{content.intro}</h1>
+        <h2 class="font-medium text-stone-300">{content.subIntro}</h2>
       </div>
       <div class="flex justify-center gap-6">
         {
@@ -47,18 +66,18 @@ import Chevron from "@/assets/chevron_r.svg";
     <section
       class="grid grid-cols-2 divide-x divide-stone-700 border-b border-stone-700 text-center font-bold text-stone-100">
       <a
-        href={MY_EMAIL}
+        href={content.contact.href}
         class="group relative bg-orange-800/20 py-6 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white">
-        <span class="relative z-10 block">Contact Me</span>
+        <span class="relative z-10 block">{content.contact.label}</span>
         <span
           class="absolute inset-0 z-0 -translate-x-full bg-orange-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
         ></span>
       </a>
       <a
-        href={MY_RESUME}
+        href={content.resume.href}
         download
         class="group relative bg-stone-800/40 py-6 transition-colors duration-200 ease-in-out hover:bg-stone-800/80 hover:text-white">
-        <span class="relative z-10 block">My Resume</span>
+        <span class="relative z-10 block">{content.resume.label}</span>
         <span
           class="absolute inset-0 z-0 translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
         ></span>
@@ -67,19 +86,12 @@ import Chevron from "@/assets/chevron_r.svg";
     <section
       class="space-y-6 border-b border-stone-700 bg-radial-[at_25%_25%] from-stone-800/70 to-transparent to-70% p-12">
       <div class="space-y-1.5">
-        <h3 class="text-lg font-bold text-stone-100">What I Do</h3>
-        <p class="text-stone-300">
-          I specialize in JavaScript and TypeScript for both front-end and back-end development, with additional
-          experience in Python and Go. I enjoy creating everything from browser-based games with vanilla JavaScript to
-          full-stack MERN applications and web-based desktop apps using Electron. I'm open to remote or on-site
-          freelance contracts as well as full-time opportunities.
-        </p>
+        <h3 class="text-lg font-bold text-stone-100">{content.p1Header}</h3>
+        <p class="text-stone-300">{content.p1Content}</p>
       </div>
       <div class="space-y-1.5">
-        <h3 class="text-lg font-bold text-stone-100">Interests & Hobbies</h3>
-        <p class="text-stone-300">
-          I enjoy running, hiking, traveling, PC gaming, building custom PCs, cooking, and watching movies and anime.
-        </p>
+        <h3 class="text-lg font-bold text-stone-100">{content.p2Header}</h3>
+        <p class="text-stone-300">{content.p2Content}</p>
       </div>
     </section>
     <section class="grid grid-cols-4 divide-x divide-stone-700">

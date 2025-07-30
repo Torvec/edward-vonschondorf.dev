@@ -8,7 +8,7 @@ const isActive = (href: string) => {
 };
 ---
 
-<nav class="z-10 flex h-screen w-12 flex-col border-r border-stone-700 bg-stone-800 pb-6 fixed">
+<nav class="fixed z-10 flex h-screen w-12 flex-col border-r border-stone-700 bg-stone-800 pb-6">
   <div class="flex grow flex-col justify-between">
     <div>
       {
@@ -20,7 +20,7 @@ const isActive = (href: string) => {
               isActive(href) ? "bg-stone-700 text-stone-300" : "text-stone-400"
             }`}>
             <Icon
-              class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120"
+              class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
               aria-label={name}
             />
           </a>
@@ -37,7 +37,7 @@ const isActive = (href: string) => {
             title={name}
             class="group flex h-12 items-center justify-between hover:bg-stone-700">
             <Icon
-              class="mx-auto size-6 text-stone-400 transition-all duration-300 ease-in-out group-hover:scale-120"
+              class="mx-auto size-6 text-stone-400 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
               aria-label={name}
             />
           </a>

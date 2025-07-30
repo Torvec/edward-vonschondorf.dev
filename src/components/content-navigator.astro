@@ -14,9 +14,9 @@ const nextItem = currentIndex + 1 === items.length ? null : items[currentIndex +
         href={`/${basePath}/${prevItem.id}/`}
         aria-label={`Go to: ${prevItem.data.title}`}
         class="group block w-full rounded-md border border-stone-700 bg-stone-900/40 px-3 py-1.5 transition-colors duration-300 ease-in-out hover:border-orange-900 hover:bg-stone-800/40 md:col-span-3">
-        <span class="ml-3 block text-sm text-stone-400">Previous</span>
+        <span class="block text-sm text-stone-400">Previous</span>
         <span class="block font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100">
-          &laquo; {prevItem.data.title}
+          {prevItem.data.title}
         </span>
       </a>
     ) : (
@@ -39,9 +39,9 @@ const nextItem = currentIndex + 1 === items.length ? null : items[currentIndex +
         href={`/${basePath}/${nextItem.id}/`}
         aria-label={`Go to: ${nextItem.data.title}`}
         class="group block w-full rounded-md border border-stone-700 bg-stone-900/40 px-3 py-1.5 text-right transition-colors duration-300 ease-in-out hover:border-orange-900 hover:bg-stone-800/40 md:col-span-3">
-        <span class="mr-3 block text-sm text-stone-400">Next</span>
+        <span class="block text-sm text-stone-400">Next</span>
         <span class="block font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100">
-          {nextItem.data.title} &raquo;
+          {nextItem.data.title}
         </span>
       </a>
     ) : (

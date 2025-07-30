@@ -4,7 +4,8 @@ import Layout from "@/layouts/layout.astro";
 import PageHeader from "@/components/page-header.astro";
 import Card from "@/components/card.astro";
 import FormattedDate from "@/components/formatted-date.astro";
-import BlogIcon from "@/assets/blog.svg"
+import BlogIcon from "@/assets/blog.svg";
+import Chevron from "@/assets/chevron_r.svg";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
@@ -34,9 +35,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
                 </p>
                 <span class="font-mono text-sm text-stone-400">{post.data.readTime} min read</span>
               </div>
-              <span class="block translate-x-full text-xl text-stone-200 transition-transform duration-300 ease-in-out group-hover:-translate-x-full">
-                &raquo;
-              </span>
+              <Chevron class="translate-x-full text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full" />
             </div>
           </a>
         </Card>
