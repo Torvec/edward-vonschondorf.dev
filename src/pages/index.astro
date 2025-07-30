@@ -7,8 +7,9 @@ import Chevron from "@/assets/chevron_r.svg";
 ---
 
 <Layout title="Software Developer | Edward Vonschondorf" description="Welcome to my little corner of the internets!">
-  <article class="z-10 mx-auto my-auto max-w-2xl rounded-3xl border border-stone-800 backdrop-blur-xs">
-    <section class="space-y-6 border-b border-stone-800 p-12">
+  <article
+    class="z-10 mx-auto my-auto max-w-2xl overflow-clip rounded-3xl border border-stone-800 backdrop-blur-xs">
+    <section class="space-y-6 border-b border-stone-800 bg-radial-[at_50%_25%] from-stone-800/70 to-transparent p-12">
       <div class="mx-auto max-w-64 overflow-clip rounded-full border-2 border-stone-700 bg-stone-900">
         <Banner
           href={"/"}
@@ -44,13 +45,29 @@ import Chevron from "@/assets/chevron_r.svg";
     </section>
     <section
       class="grid grid-cols-2 divide-x divide-stone-800 border-b border-stone-800 text-center font-bold text-stone-100">
-      <a href={MY_EMAIL} class="py-6">Contact Me</a>
-      <a href={MY_RESUME} download class="py-6">My Resume</a>
+      <a
+        href={MY_EMAIL}
+        class="group relative bg-orange-800/20 py-6 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white">
+        <span class="relative z-10 block">Contact Me</span>
+        <span
+          class="absolute inset-0 z-0 -translate-x-full bg-orange-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
+        ></span>
+      </a>
+      <a
+        href={MY_RESUME}
+        download
+        class="group relative bg-stone-800/40 py-6 transition-colors duration-200 ease-in-out hover:bg-stone-800/80 hover:text-white">
+        <span class="relative z-10 block">My Resume</span>
+        <span
+          class="absolute inset-0 z-0 translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
+        ></span>
+      </a>
     </section>
-    <section class="space-y-6 border-b border-stone-800 p-12">
+    <section
+      class="space-y-6 border-b border-stone-800 bg-radial-[at_25%_25%] from-stone-800/70 to-transparent to-70% p-12">
       <div class="space-y-1.5">
         <h3 class="text-lg font-bold text-stone-100">What I Do</h3>
-        <p class="font-medium text-stone-300">
+        <p class="text-stone-300">
           I specialize in JavaScript and TypeScript for both front-end and back-end development, with additional
           experience in Python and Go. I enjoy creating everything from browser-based games with vanilla JavaScript to
           full-stack MERN applications and web-based desktop apps using Electron. I'm open to remote or on-site
@@ -59,7 +76,7 @@ import Chevron from "@/assets/chevron_r.svg";
       </div>
       <div class="space-y-1.5">
         <h3 class="text-lg font-bold text-stone-100">Interests & Hobbies</h3>
-        <p class="font-medium text-stone-300">
+        <p class="text-stone-300">
           I enjoy running, hiking, traveling, PC gaming, building custom PCs, cooking, and watching movies and anime.
         </p>
       </div>
@@ -69,15 +86,19 @@ import Chevron from "@/assets/chevron_r.svg";
         pageLinks.map(
           ({ name, href, Icon }) =>
             name !== "Home" && (
-              <a href={href} class="flex items-end justify-between p-6">
+              <a
+                href={href}
+                class="group flex items-end justify-between bg-radial-[at_5%_40%] from-stone-800/70 to-transparent to-60% p-6 transition-colors duration-200 ease-in-out hover:from-stone-800/90">
                 <span class="block grow space-y-6">
                   <Icon
-                    class="size-6 text-stone-100 transition-all duration-300 ease-in-out group-hover:scale-120"
+                    class="size-6 text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-white"
                     aria-label={name}
                   />
                   <span class="flex items-baseline justify-between">
-                    <span class="font-medium text-stone-100">{name}</span>
-                    <Chevron class="size-3 text-orange-600" />
+                    <span class="font-medium text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-orange-600">
+                      {name}
+                    </span>
+                    <Chevron class="size-3 text-orange-600 transition-transform duration-200 ease-in-out group-hover:translate-x-1" />
                   </span>
                 </span>
               </a>
