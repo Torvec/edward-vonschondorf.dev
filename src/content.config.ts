@@ -21,6 +21,7 @@ const projects = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      type: z.enum(["app", "game"]),
       banner: image(),
       images: z.array(image()),
       repo_url: z.string(),
