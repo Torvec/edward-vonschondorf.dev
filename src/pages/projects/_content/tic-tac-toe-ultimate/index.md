@@ -1,11 +1,11 @@
 ---
 title: "Tic Tac Toe Ultimate"
 description: "A strategic browser-based Ultimate Tic Tac Toe game. Play locally with a friend and outsmart your opponent across nine nested 3x3 grids."
-type: "game"
+type: "Game"
 banner: "./tic_tac_toe_ultimate_banner.jpg"
 images: ["./tic_tac_toe_ultimate_1.jpg"]
 repo_url: "https://github.com/Torvec/tic-tac-toe-ultimate"
-play_url: "https://tic-tac-toe-ultimate.pages.dev/"
+deploy_url: "https://tic-tac-toe-ultimate.pages.dev/"
 tech_stack: ["JavaScript"]
 pubDate: 2024-10-14
 ---

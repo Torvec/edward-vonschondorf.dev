@@ -1,11 +1,11 @@
 ---
 title: "Tic Tac Toe React"
 description: "Tic Tac Toe Classic and Tic Tac Toe Ultimate made with React."
-type: "game"
+type: "Game"
 banner: "./tic_tac_toe_react_thumbnail.jpg"
 images: ["./tic_tac_toe_react_1.jpg", "./tic_tac_toe_react_2.jpg"]
 repo_url: "https://github.com/Torvec/tic-tac-toe-react"
-deploy_url: "https://torvec.github.io/Loot-Vault/"
+deploy_url: "https://tic-tac-toe-react.edvonschondorf.workers.dev/"
 tech_stack: ["Vite", "React", "TypeScript", "Tailwind CSS"]
 pubDate: 2025-07-15
 ---

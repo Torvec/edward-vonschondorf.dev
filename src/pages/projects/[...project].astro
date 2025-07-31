@@ -9,7 +9,7 @@ import ContentNavigator from "@/components/content-navigator.astro";
 export async function getStaticPaths() {
   // Ascending order (oldest to newest), for the content navigation component
   const projects = (await getCollection("projects")).sort(
-    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
   );
 
   return projects.map((project, index) => ({
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { project, index, projects } = Astro.props;
-const { title, description, images, deploy_url, repo_url, tech_stack } = project.data;
+const { title, description, type, images, deploy_url, repo_url, tech_stack } = project.data;
 const image_index = 0;
 
 const { Content } = await render(project);
@@ -28,52 +28,52 @@ const { Content } = await render(project);
 <Layout title={title + " | Edward Vonschondorf"} description={description}>
   <article class="relative z-2 container mx-auto my-auto max-w-4xl px-1.5 lg:px-3 xl:px-0">
     <Card>
-      <h1 class="mb-3 text-xl font-bold text-stone-100">{title}</h1>
-      <div class="flex flex-col gap-6 md:flex-row">
-        <!-- IMAGE GALLERY -->
-        <section class="space-y-3 md:w-1/2">
-          <a href={`/projects/${project.id}/gallery/${image_index}`} class="block rounded-xl bg-black py-6 md:py-12">
+      <div class="flex items-baseline justify-between">
+        <h1 class="mb-3 text-xl font-bold text-stone-100">{title}</h1>
+        <span class="text-sm text-stone-500">{type}</span>
+      </div>
+      <section class="mb-6 flex gap-3">
+        <div class="w-2/3">
+          <a
+            href={`/projects/${project.id}/gallery/${image_index}`}
+            class="block aspect-square rounded-t-xl bg-black pt-6 border border-stone-700">
             <Image
               src={images[0]}
-              class="size-full object-contain transition-transform duration-300 ease-in-out hover:scale-90"
+              class="size-full object-contain transition-transform duration-300 ease-in-out hover:scale-95"
               alt={`${title} screenshot`}
             />
           </a>
-          <div class="grid grid-cols-4 gap-1.5 md:grid-cols-2 md:gap-3">
+          <div class="grid grid-cols-4 divide-x divide-stone-700 border border-stone-700 rounded-b-xl overflow-clip">
             {
               images.map((_, index) => (
-                <span class="block aspect-square rounded-xl bg-black">
+                <a href={`/projects/${project.id}/gallery/${index}`} class="block rounded-xl bg-black">
                   <Image
                     src={images[index]}
-                    class="size-full object-contain transition-transform duration-300 ease-in-out hover:scale-90"
+                    class="object-contain transition-opacity duration-300 ease-in-out hover:opacity-80"
                     alt={`${title} screenshot`}
                   />
-                </span>
+                </a>
               ))
             }
           </div>
-        </section>
-        <!-- CONTENT -->
-        <section class="flex flex-col justify-between gap-6 md:w-1/2">
-          <div class="space-y-3">
-            <div class="prose">
-              <Content />
-            </div>
-            <h2 class="font-bold text-stone-100">Tech Stack</h2>
-            <ul class="flex flex-wrap gap-3">
-              {
-                tech_stack.map((tech) => (
-                  <li class="rounded-xl border px-3 py-1 text-sm font-medium text-stone-500">{tech}</li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="flex flex-col gap-3 md:flex-row">
-            <ActionButton href={deploy_url} external>Deployment</ActionButton>
-            <ActionButton href={repo_url} external>Repository</ActionButton>
-          </div>
-        </section>
-      </div>
+        </div>
+        <div class="w-1/3 space-y-3">
+          <Image src={project.data.banner} alt={project.data.title} class={"rounded-xl border border-stone-700"} />
+          <p class="text-stone-300">{project.data.description}</p>
+          <ActionButton href={deploy_url} external>{type === "App" ? "Deployment" : "Play"}</ActionButton>
+          <ActionButton href={repo_url} external>Repository</ActionButton>
+          <ul class="flex flex-wrap gap-3">
+            {
+              tech_stack.map((tech) => (
+                <li class="rounded-xl border px-3 py-1 text-sm font-medium text-stone-500">{tech}</li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+      <section class="prose">
+        <Content />
+      </section>
     </Card>
   </article>
   <ContentNavigator items={projects} currentIndex={index} basePath="projects" contentType="Projects" />

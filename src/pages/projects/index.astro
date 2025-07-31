@@ -16,7 +16,6 @@ const projects = (await getCollection("projects")).sort((a, b) => b.data.pubDate
       All of my web and game development related projects are listed here. Feel free to try them out and look at the
       source code!
     </PageHeader>
-    <!-- PROJECTS LIST -->
     <section class="columns-1 gap-1.5 sm:columns-2 lg:gap-3">
       {
         projects.map((project) => (
