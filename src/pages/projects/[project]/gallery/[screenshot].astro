@@ -33,27 +33,28 @@ const currentIndex = images[imageIndex];
 ---
 
 <Layout title={title + " Screenshot Gallery | Edward Vonschondorf"} description={"Images"}>
-  <article class="relative z-2 container mx-auto my-auto max-w-3xl px-1.5 lg:px-3 xl:px-0">
-    <Card twc="space-y-3">
-      <div class="flex items-baseline justify-between">
+  <article class="relative z-10 container mx-auto my-auto max-w-3xl px-1.5 lg:px-3 xl:px-0">
+    <Card>
+      <div class="mb-3 flex items-baseline justify-between">
         <h1 class="text-xl font-bold text-stone-100">{title}</h1>
         <a
           href={`/projects/${project}`}
           aria-label={`Return to ${title} page`}
           title={`Return to ${title} page`}
-          class="block text-stone-300 transition-colors duration-300 ease-in-out hover:text-stone-50">
+          class="block text-stone-300 transition-colors duration-300 ease-in-out hover:text-orange-600">
           <Close />
         </a>
       </div>
-      <div class="rounded-xl border border-stone-800 bg-black py-6 md:py-12">
+      <div class="aspect-square rounded-t-xl border-x border-t border-stone-700 bg-black py-6 md:py-12">
         <Image src={currentIndex} alt={`${title} Screenshot`} class="mx-auto" />
       </div>
-      <div class="grid gap-1.5 md:grid-cols-4 md:gap-3">
+      <div
+        class="grid divide-x divide-stone-700 overflow-clip rounded-b-xl border border-stone-700 bg-black md:grid-cols-4">
         {
           images.map((_: any, index: number) => (
             <a
               href={`/projects/${project}/gallery/${index}`}
-              class={`aspect-square rounded-xl bg-black py-3 transition-colors duration-300 ease-in-out ${index !== imageIndex ? "hover:border-stone-600" : null} ${index === imageIndex ? "border-2 border-white" : "border border-stone-800"}`}>
+              class={`aspect-square bg-black py-3 transition-colors duration-300 ease-in-out ${index !== imageIndex ? "hover:bg-stone-700" : null} ${index === imageIndex ? "bg-stone-700" : ""}`}>
               <Image src={images[index]} alt={`${title} Screenshot`} class="size-full object-cover" />
             </a>
           ))

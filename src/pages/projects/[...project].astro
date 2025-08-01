@@ -36,20 +36,23 @@ const { Content } = await render(project);
         <div class="w-2/3">
           <a
             href={`/projects/${project.id}/gallery/${image_index}`}
-            class="block aspect-square rounded-t-xl bg-black pt-6 border border-stone-700">
+            class="block aspect-square rounded-t-xl border-x border-t border-stone-700 bg-black py-6">
             <Image
               src={images[0]}
               class="size-full object-contain transition-transform duration-300 ease-in-out hover:scale-95"
               alt={`${title} screenshot`}
             />
           </a>
-          <div class="grid grid-cols-4 divide-x divide-stone-700 border border-stone-700 rounded-b-xl overflow-clip">
+          <div
+            class="grid grid-cols-4 divide-x divide-stone-700 overflow-clip rounded-b-xl border border-stone-700 bg-black">
             {
               images.map((_, index) => (
-                <a href={`/projects/${project.id}/gallery/${index}`} class="block rounded-xl bg-black">
+                <a
+                  href={`/projects/${project.id}/gallery/${index}`}
+                  class="py-3 transition-colors duration-300 ease-in-out hover:bg-stone-700">
                   <Image
                     src={images[index]}
-                    class="object-contain transition-opacity duration-300 ease-in-out hover:opacity-80"
+                    class="aspect-square object-contain transition-opacity duration-300 ease-in-out"
                     alt={`${title} screenshot`}
                   />
                 </a>
