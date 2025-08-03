@@ -7,7 +7,7 @@ images: ["./tic_tac_toe_react_1.jpg", "./tic_tac_toe_react_2.jpg"]
 repo_url: "https://github.com/Torvec/tic-tac-toe-react"
 deploy_url: "https://tic-tac-toe-react.edvonschondorf.workers.dev/"
 tech_stack: ["Vite", "React", "TypeScript", "Tailwind CSS"]
-pubDate: 2025-07-15
+pubDate: 2025-07-02
 ---
 
 ### Description

@@ -1,6 +1,6 @@
 ---
 title: "Loot Vault"
-description: "A video game deals site for gamers on a budget using third party API's. This was the first UC Berkeley group project where I worked on the front-end design and implemented the Bulma CSS library, wishlist functionality, and free games API."
+description: "A video game deals site for gamers on a budget using third party API's."
 type: "App"
 banner: "./loot_vault_banner.jpg"
 images:

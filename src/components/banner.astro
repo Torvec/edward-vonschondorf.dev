@@ -6,7 +6,7 @@ const { href, ariaLabel, src, altText, titleText, displayText } = Astro.props;
 <a
   href={`${href}`}
   aria-label={`${ariaLabel}`}
-  class="group/banner relative block size-full shrink-0 overflow-hidden rounded-3xl border border-stone-700 transition-colors duration-300 ease-in-out hover:border-stone-500">
+  class="group/banner relative block size-full overflow-clip rounded-3xl border border-stone-700 transition-colors duration-300 ease-in-out hover:border-stone-500">
   <Image
     src={src}
     alt={`${altText}`}

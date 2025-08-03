@@ -1,8 +1,8 @@
 import Logo from "@/assets/ev_logo.svg";
-import Projects from "@/assets/projects.svg";
-import Blog from "@/assets/blog.svg";
-import Now from "@/assets/now.svg";
-import Uses from "@/assets/uses.svg";
+import ProjectsIcon from "@/assets/projects.svg";
+import BlogIcon from "@/assets/blog.svg";
+import NowIcon from "@/assets/now.svg";
+import UsesIcon from "@/assets/uses.svg";
 import Gmail from "@/assets/gmail.svg";
 import GitHub from "@/assets/github.svg";
 import LinkedIn from "@/assets/linkedin.svg";
@@ -20,10 +20,10 @@ export const MY_RESUME = "edward_vonschondorf_resume_06MAY2025.pdf";
 
 export const pageLinks = [
   { name: "Home", href: "/", Icon: Logo },
-  { name: "Projects", href: "/projects", Icon: Projects },
-  { name: "Blog", href: "/blog", Icon: Blog },
-  { name: "Now", href: "/now", Icon: Now },
-  { name: "Uses", href: "/uses", Icon: Uses },
+  { name: "Projects", href: "/projects", Icon: ProjectsIcon },
+  { name: "Blog", href: "/blog", Icon: BlogIcon },
+  { name: "Now", href: "/now", Icon: NowIcon },
+  { name: "Uses", href: "/uses", Icon: UsesIcon },
 ];
 
 export const socialLinks = [

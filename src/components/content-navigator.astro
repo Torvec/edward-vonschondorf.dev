@@ -3,35 +3,43 @@ const { items, currentIndex, basePath, contentType } = Astro.props;
 
 const prevItem = currentIndex - 1 < 0 ? null : items[currentIndex - 1];
 const nextItem = currentIndex + 1 === items.length ? null : items[currentIndex + 1];
+
+const label = {
+  prev: "Previous",
+  goTo: "Go To",
+  next: "Next",
+  none: "--",
+};
 ---
 
 <nav
   aria-label={`${contentType} navigation`}
-  class="relative z-2 container mx-auto grid max-w-4xl divide-x divide-stone-700 px-1.5 py-12 md:grid-cols-8 xl:px-0">
+  class="grid divide-x divide-stone-700 overflow-clip rounded-b-xl border-t border-stone-700 md:grid-cols-8">
   {
     prevItem ? (
       <a
         href={`/${basePath}/${prevItem.id}/`}
         aria-label={`Go to: ${prevItem.data.title}`}
-        class="group relative block w-full overflow-clip rounded-l-md border-y border-l border-stone-700 bg-stone-900/40 px-3 py-1.5 transition-colors duration-300 ease-in-out md:col-span-3">
-        <span class="relative z-10 block text-sm text-stone-400">Previous</span>
+        class="group relative block w-full overflow-clip bg-stone-900/40 px-6 py-3 transition-colors duration-300 ease-in-out md:col-span-3">
+        <span class="relative z-10 block text-sm text-stone-400">{label.prev}</span>
         <span class="relative z-10 block font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100">
           {prevItem.data.title}
         </span>
         <span class="absolute inset-0 z-0 translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0" />
       </a>
     ) : (
-      <span class="block w-full rounded-md border border-stone-800 bg-stone-950 px-3 py-1.5 text-sm text-stone-500 md:col-span-3">
-        Previous
+      <span class="block w-full bg-stone-950 px-6 py-3 text-sm text-stone-500 md:col-span-3">
+        {label.prev}
         <br />
-        --
+        {label.none}
       </span>
     )
   }
   <a
     href={`/${basePath}/`}
     aria-label={`View all ${contentType}`}
-    class="group relative block w-full place-content-center overflow-clip border-y border-stone-700 bg-stone-900/40 px-3 py-1.5 text-center font-medium text-stone-300 transition-colors duration-300 ease-in-out hover:text-stone-100 md:col-span-2">
+    class="group relative block w-full place-content-center overflow-clip bg-stone-900/40 px-6 py-3 text-center font-medium text-stone-300 transition-colors duration-300 ease-in-out hover:text-stone-100 md:col-span-2">
+    <span class="relative z-10 block text-sm text-stone-400">{label.goTo}</span>
     <span class="relative z-10">{contentType}</span>
     <span
       class="absolute inset-0 z-0 translate-y-full bg-stone-800 transition-transform duration-100 ease-in group-hover:translate-y-0"
@@ -42,18 +50,18 @@ const nextItem = currentIndex + 1 === items.length ? null : items[currentIndex +
       <a
         href={`/${basePath}/${nextItem.id}/`}
         aria-label={`Go to: ${nextItem.data.title}`}
-        class="group relative block w-full overflow-clip rounded-r-md border-y border-r border-stone-700 bg-stone-900/40 px-3 py-1.5 text-right transition-colors duration-300 ease-in-out md:col-span-3">
-        <span class="relative z-10 block text-sm text-stone-400">Next</span>
+        class="group relative block w-full overflow-clip bg-stone-900/40 px-6 py-3 text-right transition-colors duration-300 ease-in-out md:col-span-3">
+        <span class="relative z-10 block text-sm text-stone-400">{label.next}</span>
         <span class="relative z-10 block font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100">
           {nextItem.data.title}
         </span>
         <span class="absolute inset-0 z-0 -translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0" />
       </a>
     ) : (
-      <span class="block w-full rounded-md border border-stone-800 bg-stone-950 px-3 py-1.5 text-right text-sm text-stone-500 md:col-span-3">
-        Next
+      <span class="block w-full bg-stone-950 px-6 py-3 text-right text-sm text-stone-500 md:col-span-3">
+        {label.next}
         <br />
-        --
+        {label.none}
       </span>
     )
   }
