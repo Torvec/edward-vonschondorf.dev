@@ -1,5 +1,7 @@
 ---
 import { pageLinks, socialLinks } from "@/global-consts";
+import OpenIcon from "@/assets/open.svg";
+import CloseIcon from "@/assets/close.svg";
 
 const { currentPage } = Astro.props;
 
@@ -9,8 +11,10 @@ const isActive = (href: string) => {
 ---
 
 <nav
-  class="fixed bottom-0 z-20 w-full border-t border-stone-700 bg-stone-800 lg:top-0 lg:flex lg:h-screen lg:w-12 lg:flex-col lg:border-r lg:pb-6">
-  <div id="menu" class="hidden py-3 font-medium lg:flex lg:grow lg:flex-col lg:justify-between lg:py-0">
+  class="fixed bottom-0 z-20 w-full bg-stone-800/75 backdrop-blur-lg lg:top-0 lg:flex lg:h-screen lg:w-12 lg:flex-col lg:border-r lg:border-stone-700 lg:pb-6">
+  <div
+    id="menu"
+    class="mb-6 hidden space-y-12 font-medium lg:mb-0 lg:flex lg:grow lg:flex-col lg:justify-between lg:space-y-0">
     <div>
       {
         pageLinks.map(({ name, href, Icon }) => (
@@ -29,7 +33,7 @@ const isActive = (href: string) => {
         ))
       }
     </div>
-    <div>
+    <div class="flex justify-between lg:block">
       {
         socialLinks.map(({ name, url, Icon }) => (
           <a
@@ -37,28 +41,22 @@ const isActive = (href: string) => {
             target="_blank"
             rel="noopener noreferrer external"
             title={name}
-            class="group flex items-center justify-center gap-3 py-6 text-stone-400 hover:bg-stone-700 lg:h-12 lg:py-0">
+            class="group flex grow items-center justify-center py-6 text-stone-400 hover:bg-stone-700 lg:h-12 lg:grow-0 lg:py-0">
             <Icon
               class="size-6 text-stone-400 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300 lg:mx-auto"
               aria-label={name}
             />
-            <span class="group-hover:text-stone-300 lg:hidden">{name}</span>
           </a>
         ))
       }
     </div>
   </div>
-  <button id="menu-toggle" class="group z-20 mx-auto block cursor-pointer lg:hidden" aria-label="Toggle Menu">
-    <span
-      id="menu-open"
-      class="block rounded-md border border-stone-700 p-1.5 text-2xl text-white transition-colors duration-150 ease-in-out hover:border-stone-500 hover:bg-stone-900">
-      +
-    </span>
-    <span
-      id="menu-close"
-      class="hidden rounded-md border border-stone-900 p-1.5 text-2xl text-white transition-colors duration-150 ease-in-out hover:border-stone-500 hover:bg-stone-900">
-      X
-    </span>
+  <button
+    id="menu-toggle"
+    class="group z-20 block w-full cursor-pointer py-2 hover:bg-stone-700 lg:hidden"
+    aria-label="Toggle Menu">
+    <OpenIcon id={"menu-open"} class={"size-6 text-stone-500 mx-auto group-hover:text-stone-300"} />
+    <CloseIcon id={"menu-close"} class={"hidden text-stone-500 size-6 mx-auto group-hover:text-stone-300"} />
   </button>
 </nav>
 <!-- Handles the drop down menu visibility below sm breakpoint -->
