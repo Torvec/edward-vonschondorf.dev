@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/layout.astro";
 import PageHeader from "@/components/page-header.astro";
-import Card from "@/components/card.astro";
 import FormattedDate from "@/components/formatted-date.astro";
 import BlogIcon from "@/assets/blog.svg";
 import Chevron from "@/assets/chevron_r.svg";
@@ -11,34 +10,32 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
 ---
 
 <Layout title="Blog | Edward Vonschondorf" description="A place to share my work and the journey it took to get there.">
-  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 px-1.5 lg:space-y-3 lg:px-3 xl:px-0">
+  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 lg:space-y-3">
     <PageHeader header="Blog" Icon={BlogIcon}>
       Welcome to the blog section of my site where I share my insights, experiences, and lessons from my ongoing journey
       as a developer.
     </PageHeader>
     {
       posts.map((post) => (
-        <Card>
-          <a
-            href={`/blog/${post.id}/`}
-            class="group flex w-full flex-col items-baseline text-pretty sm:flex-row sm:gap-12">
-            <span class="block flex-shrink-0 font-mono text-stone-400 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
-              <FormattedDate date={post.data.pubDate} />
-            </span>
-            <div class="flex w-full items-center justify-between overflow-hidden">
-              <div>
-                <span class="block font-bold text-pretty text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
-                  {post.data.title}
-                </span>
-                <p class="text-sm text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
-                  {post.data.summary}
-                </p>
-                <span class="font-mono text-sm text-stone-400">{post.data.readTime} min read</span>
-              </div>
-              <Chevron class="translate-x-full text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full" />
+        <a
+          href={`/blog/${post.id}/`}
+          class="group flex w-full flex-col items-baseline border-y border-stone-700 p-3 text-pretty backdrop-blur-xs transition-colors duration-300 ease-in-out hover:bg-stone-900/40 sm:flex-row sm:gap-12 md:rounded-3xl md:border-x md:p-6">
+          <span class="block flex-shrink-0 font-mono text-stone-400 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
+            <FormattedDate date={post.data.pubDate} />
+          </span>
+          <div class="flex w-full items-center justify-between overflow-clip">
+            <div class="space-y-1">
+              <span class="block font-bold text-pretty text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
+                {post.data.title}
+              </span>
+              <p class="text-sm text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
+                {post.data.summary}
+              </p>
+              <span class="font-mono text-sm text-stone-400">{post.data.readTime} min read</span>
             </div>
-          </a>
-        </Card>
+            <Chevron class="translate-x-full text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full" />
+          </div>
+        </a>
       ))
     }
   </article>

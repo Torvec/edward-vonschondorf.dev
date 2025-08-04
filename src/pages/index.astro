@@ -1,7 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "@/layouts/layout.astro";
 import { socialLinks, pageLinks, MY_EMAIL, MY_RESUME } from "@/global-consts";
-import Banner from "@/components/banner.astro";
 import profilePic from "@/assets/portrait_gray_transparent_bg.png";
 import Chevron from "@/assets/chevron_r.svg";
 
@@ -26,21 +26,19 @@ const content = {
 ---
 
 <Layout title="Software Developer | Edward Vonschondorf" description="Welcome to my little corner of the internets!">
-  <article class="z-10 mx-auto my-auto max-w-3xl overflow-clip rounded-3xl border border-stone-700 backdrop-blur-xs">
-    <section class="space-y-6 border-b border-stone-700 bg-radial-[at_50%_25%] from-stone-800/70 to-transparent p-12">
-      <div class="mx-auto max-w-64 overflow-clip rounded-full border-2 border-stone-700 bg-stone-900">
-        <Banner
-          href={"/"}
-          ariaLabel="Profile Picture of Me, Edward Vonschondorf"
-          src={profilePic}
-          altText="Profile Picture of Me, Edward Vonschondorf"
-          titleText="It's-a-me, Edward Vonschondorf!"
-          displayText="Share 🔗"
-        />
-      </div>
-      <div class="space-y-1.5 text-center">
-        <h1 class="text-2xl font-semibold text-stone-100">{content.intro}</h1>
-        <h2 class="font-medium text-stone-300">{content.subIntro}</h2>
+  <article
+    class="z-10 mx-auto my-auto max-w-3xl overflow-clip border-y border-stone-700 backdrop-blur-xs md:rounded-3xl md:border-x">
+    <section
+      class="space-y-6 border-b border-stone-700 bg-radial-[at_50%_25%] from-stone-800/70 to-transparent px-1.5 py-6 sm:p-12">
+      <Image
+        src={profilePic}
+        alt={"Profile picture of Edward Vonschondorf!"}
+        title={"It's-a-me, Edward Vonschondorf!"}
+        class={"max-w-48 sm:max-w-64 rounded-full mx-auto border-stone-700 border-2"}
+      />
+      <div class="text-center">
+        <h1 class="text-lg font-semibold text-stone-100 sm:text-2xl">{content.intro}</h1>
+        <h2 class="text-sm font-medium text-stone-300 sm:text-base">{content.subIntro}</h2>
       </div>
       <div class="flex justify-center gap-6">
         {
@@ -64,10 +62,10 @@ const content = {
       </div>
     </section>
     <section
-      class="grid grid-cols-2 divide-x divide-stone-700 border-b border-stone-700 text-center font-bold text-stone-100">
+      class="grid divide-y divide-stone-700 border-b border-stone-700 text-center font-bold text-stone-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
       <a
         href={content.contact.href}
-        class="group relative bg-orange-800/20 py-6 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white">
+        class="group relative bg-orange-800/20 py-3 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white sm:py-6">
         <span class="relative z-10 block">{content.contact.label}</span>
         <span
           class="absolute inset-0 z-0 -translate-x-full bg-orange-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
@@ -76,15 +74,14 @@ const content = {
       <a
         href={content.resume.href}
         download
-        class="group relative bg-stone-800/40 py-6 transition-colors duration-200 ease-in-out hover:bg-stone-800/80 hover:text-white">
+        class="group relative bg-stone-800/40 py-3 transition-colors duration-200 ease-in-out hover:bg-stone-800/80 hover:text-white sm:py-6">
         <span class="relative z-10 block">{content.resume.label}</span>
         <span
           class="absolute inset-0 z-0 translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
         ></span>
       </a>
     </section>
-    <section
-      class="space-y-6 border-b border-stone-700 bg-radial-[at_25%_25%] from-stone-800/70 to-transparent to-70% p-12">
+    <section class="space-y-6 border-b border-stone-700 px-3 py-6 sm:p-12">
       <div class="space-y-1.5">
         <h3 class="text-lg font-bold text-stone-100">{content.p1Header}</h3>
         <p class="text-stone-300">{content.p1Content}</p>
@@ -94,14 +91,14 @@ const content = {
         <p class="text-stone-300">{content.p2Content}</p>
       </div>
     </section>
-    <section class="grid grid-cols-4 divide-x divide-stone-700">
+    <section class="grid grid-cols-2 divide-x divide-y divide-stone-700 sm:grid-cols-4 sm:divide-y-0">
       {
         pageLinks.map(
           ({ name, href, Icon }) =>
             name !== "Home" && (
               <a
                 href={href}
-                class="group flex items-end justify-between bg-radial-[at_5%_40%] from-stone-800/70 to-transparent to-60% p-6 transition-colors duration-200 ease-in-out hover:from-stone-800/90">
+                class="group flex items-end justify-between bg-stone-900/40 p-6 transition-colors duration-200 ease-in-out hover:bg-stone-900">
                 <span class="block grow space-y-6">
                   <Icon
                     class="size-6 text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-white"

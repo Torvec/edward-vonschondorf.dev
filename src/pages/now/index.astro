@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/layout.astro";
 import PageHeader from "@/components/page-header.astro";
-import Card from "@/components/card.astro";
 import FormattedDate from "@/components/formatted-date.astro";
 import NowIcon from "@/assets/now.svg";
 
@@ -14,7 +13,7 @@ const then = posts.slice(1);
 ---
 
 <Layout title="Now | Edward Vonschondorf" description="What I'm doing now.">
-  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 px-1.5 lg:space-y-3 lg:px-3 xl:px-0">
+  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 lg:space-y-3">
     <PageHeader header="Now" Icon={NowIcon}>
       Here you can find out what I'm up to at any given moment and what I was up to before. Inspired by <a
         href="https://sive.rs/nowff"
@@ -23,9 +22,9 @@ const then = posts.slice(1);
         class="font-medium text-stone-100 hover:text-orange-600">Derek Sivers /Now page movement</a
       >.
     </PageHeader>
-    <!-- NOW -->
-    <Card>
-      <div class="flex gap-12">
+    <div class="divide-y divide-stone-700 border-y border-stone-700 backdrop-blur-xs md:rounded-3xl md:border-x">
+      <!-- NOW -->
+      <div class="flex gap-12 p-3 md:p-6">
         <span class="block flex-shrink-0 font-medium text-stone-500">
           <FormattedDate date={now.data.pubDate} />
         </span>
@@ -33,10 +32,8 @@ const then = posts.slice(1);
           {now.data.content.map((content) => <span class="block">{content}</span>)}
         </p>
       </div>
-    </Card>
-    <!-- THEN -->
-    <Card>
-      <div class="space-y-6">
+      <!-- THEN -->
+      <div class="space-y-6 p-3 md:p-6">
         {
           then.map((post) => (
             <div class="flex gap-12">
@@ -52,6 +49,6 @@ const then = posts.slice(1);
           ))
         }
       </div>
-    </Card>
+    </div>
   </article>
 </Layout>

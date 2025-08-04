@@ -10,7 +10,7 @@ const projects = (await getCollection("projects")).sort((a, b) => b.data.pubDate
 ---
 
 <Layout title="Projects | Edward Vonschondorf" description="My web development projects.">
-  <article class="relative z-10 container mx-auto max-w-3xl space-y-1.5 px-1.5 lg:space-y-3 lg:px-3 xl:px-0">
+  <article class="relative z-10 container mx-auto max-w-3xl space-y-1.5 lg:space-y-3">
     <PageHeader header="Projects" Icon={ProjectsIcon}>
       All of my web and game development related projects are listed here. Feel free to try them out and look at the
       source code!
@@ -18,7 +18,7 @@ const projects = (await getCollection("projects")).sort((a, b) => b.data.pubDate
     <section class="columns-1 gap-3 sm:columns-2 lg:gap-6">
       {
         projects.map((project) => (
-          <div class="mb-3 break-inside-avoid overflow-clip rounded-xl border border-stone-700 backdrop-blur-xs lg:mb-6">
+          <div class="mb-3 break-inside-avoid overflow-clip border-y border-stone-700 backdrop-blur-xs sm:rounded-xl sm:border-x lg:mb-6">
             <a href={`/projects/${project.id}/`} class="group bg-black">
               <Image
                 src={project.data.banner}

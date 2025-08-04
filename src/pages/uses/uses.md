@@ -1,13 +1,11 @@
 ---
 ---
 
-## Hardware
+### Hardware
 
 I'm a PC hardware enthusiast through and through and have been building my own systems since I was in middle school (with a brief hiatus during my time in the Navy). The last few years I've had an affinity for SFF systems and this is my current build:
 
-### Desktop
-
-Full Parts List: https://pcpartpicker.com/list/MNsQLc
+#### Desktop  ( [Parts List](https://pcpartpicker.com/list/MNsQLc) )
 
 - **CPU**: AMD Ryzen 7 7800X3D
 - **GPU**: Asus ProArt OC GeForce RTX 4080
@@ -16,18 +14,16 @@ Full Parts List: https://pcpartpicker.com/list/MNsQLc
 - **Motherboard**: Asus ROG STRIX B650E-I GAMING WIFI Mini ITX AM5
 - **PSU**: Corsair SF750 (2018) 750 W 80+ Platinum
 - **Case**: [FormD T1](https://formdt1.com/) - SW Kit - Black w/Anodized Aluminum Mesh
+- **Peripherals**:
+  - **Monitor**: Dell Alienware AW3821DW 37.5" 3840 x 1600 144 Hz
+  - **Mouse**: Logitech G502 X Lightspeed
+  - **Keyboard**: Wooting 80 HE PCR Ghost
+  - **Headphones**: HiFiMAN Arya
+  - **DAC**: JDS Labs Element II
 
-#### Peripherals:
+#### Laptop ( [Framework Laptop 13](https://frame.work/laptop13) )
 
-- **Monitor**: Dell Alienware AW3821DW 37.5" 3840 x 1600 144 Hz
-- **Mouse**: Logitech G502 X Lightspeed
-- **Keyboard**: Wooting 80 HE PCR Ghost
-- **Headphones**: HiFiMAN Arya
-- **DAC**: JDS Labs Element II
 
-### Laptop
-
-**[Framework](https://frame.work/laptop13) Laptop 13**
 
 - **CPU**: Intel Core i7-1280P
 - **GPU**: Intel Iris Xe Graphics (Integrated)
@@ -36,7 +32,7 @@ Full Parts List: https://pcpartpicker.com/list/MNsQLc
 - **WiFi Card**: AX210 vPro WiFi
 - **Expansion Cards**: 1 x USB-A, 3 x USB-C
 
-## Software
+### Software
 
 - **Operating System**: Microsoft Windows 11 Home _(Desktop and Laptop)_
   - With Windows Subsystem for Linux (WSL) Ubuntu _(Desktop)_
@@ -46,7 +42,7 @@ Full Parts List: https://pcpartpicker.com/list/MNsQLc
 - Irfanview
 - GIMP
 
-## Languages, Frameworks, and Libraries
+### Languages, Frameworks, & Libraries
 
 - JavaScript
 - TypeScript
