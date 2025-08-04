@@ -33,8 +33,8 @@ const currentIndex = images[imageIndex];
 
 <Layout title={title + " Screenshot Gallery | Edward Vonschondorf"} description={"Images"}>
   <article
-    class="relative z-10 container mx-auto my-auto max-w-3xl divide-y divide-stone-700 overflow-clip rounded-xl border border-stone-700 backdrop-blur-xs">
-    <div class="flex items-center justify-between px-6 py-3">
+    class="relative z-10 container mx-auto my-auto max-w-3xl divide-y divide-stone-700 overflow-clip border-y border-stone-700 backdrop-blur-xs sm:rounded-3xl sm:border-x">
+    <div class="flex items-center justify-between bg-stone-900/40 px-6 py-3">
       <h1 class="text-xl font-bold text-stone-100">{title}</h1>
       <a
         href={`/projects/${project}`}
@@ -47,15 +47,20 @@ const currentIndex = images[imageIndex];
     <div class="aspect-square place-content-center bg-black p-6">
       <Image src={currentIndex} alt={`${title} Screenshot`} class="mx-auto" />
     </div>
-    <div class="grid divide-x divide-stone-700 overflow-clip bg-black md:grid-cols-4">
+    <div
+      class="grid grid-cols-2 divide-x divide-y divide-stone-700 overflow-clip bg-black sm:divide-y-0 md:grid-cols-4">
       {
-        images.map((_: any, index: number) => (
-          <a
-            href={`/projects/${project}/gallery/${index}`}
-            class={`aspect-square bg-black p-3 transition-all duration-300 ease-in-out ${index !== imageIndex ? "hover:p-0" : null} ${index === imageIndex ? "bg-stone-800" : ""}`}>
-            <Image src={images[index]} alt={`${title} Screenshot`} class="size-full object-contain" />
-          </a>
-        ))
+        Array.from({ length: 4 }, (_, index) => images[index] ?? "").map((img, idx) =>
+          img ? (
+            <a
+              href={`/projects/${project}/gallery/${idx}`}
+              class={`aspect-square bg-black p-3 transition-all duration-300 ease-in-out ${idx !== imageIndex ? "hover:p-0" : ""} ${idx === imageIndex ? "bg-stone-800" : ""}`}>
+              <Image src={img} alt={`${title} Screenshot`} class="size-full object-contain" />
+            </a>
+          ) : (
+            <div class="aspect-square bg-black p-3" />
+          )
+        )
       }
     </div>
   </article>
