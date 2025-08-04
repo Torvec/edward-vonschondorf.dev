@@ -1,5 +1,6 @@
 ---
-import Chevron from "@/assets/chevron_r.svg";
+import ChevronR from "@/assets/chevron_r.svg";
+import ChevronL from "@/assets/chevron_l.svg";
 const { items, currentIndex, basePath, contentType } = Astro.props;
 
 const prevItem = currentIndex - 1 < 0 ? null : items[currentIndex - 1];
@@ -26,14 +27,17 @@ const label = {
         <span class="relative z-10 hidden font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100 sm:block">
           {prevItem.data.title}
         </span>
-        <Chevron class={"relative z-10 -scale-x-100 text-orange-600 group-hover:text-white sm:hidden"} />
+        <ChevronL class={"relative z-10 text-orange-600 group-hover:text-white sm:hidden"} />
         <span class="absolute inset-0 z-0 translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0" />
       </a>
     ) : (
-      <span class="block w-full bg-stone-950 px-6 py-3 text-sm text-stone-500 md:col-span-3">
+      <span class="hidden w-full bg-stone-950 px-6 py-3 text-sm text-stone-500 sm:block md:col-span-3 overflow-clip">
         {label.prev}
         <br />
         {label.none}
+      </span>
+      <span class="z-10 w-full block place-content-center pl-6 sm:hidden overflow-clip">
+        <ChevronL class={"text-stone-500"} />
       </span>
     )
   }
@@ -57,14 +61,17 @@ const label = {
         <span class="relative z-10 hidden font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100 sm:block">
           {nextItem.data.title}
         </span>
-        <Chevron class={"relative z-10 ml-auto text-orange-600 group-hover:text-white sm:hidden"} />
+        <ChevronR class={"relative z-10 ml-auto text-orange-600 group-hover:text-white sm:hidden"} />
         <span class="absolute inset-0 z-0 -translate-x-full bg-stone-800 transition-transform duration-200 ease-in group-hover:translate-x-0" />
       </a>
     ) : (
-      <span class="block w-full bg-stone-950 px-6 py-3 text-right text-sm text-stone-500 md:col-span-3">
+      <span class="hidden w-full bg-stone-950 px-6 py-3 text-right text-sm text-stone-500 sm:block md:col-span-3 overflow-clip">
         {label.next}
         <br />
         {label.none}
+      </span>
+      <span class="z-10 w-full block place-content-center pr-6 sm:hidden overflow-clip">
+        <ChevronR class={"ml-auto text-stone-500"} />
       </span>
     )
   }
