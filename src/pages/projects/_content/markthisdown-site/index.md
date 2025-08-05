@@ -16,4 +16,4 @@ The Website for the MarkThisDown Editor.
 
 ### Development
 
-Development story goes here
+Development story under development.

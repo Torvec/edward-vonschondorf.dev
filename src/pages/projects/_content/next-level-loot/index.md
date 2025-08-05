@@ -22,4 +22,4 @@ A Next.js app that aggregates and displays video game related data from multiple
 
 ### Development
 
-Development story goes here
+Development story under development.

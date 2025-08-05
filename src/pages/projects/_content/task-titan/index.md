@@ -23,4 +23,4 @@ A task completion and collaboration app for managing projects and crushing tasks
 
 ### Development
 
-Development story goes here
+Development story under development.

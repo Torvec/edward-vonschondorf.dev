@@ -16,7 +16,7 @@ const label = {
 
 <nav
   aria-label={`${contentType} navigation`}
-  class="grid grid-cols-3 divide-x divide-stone-700 overflow-clip border-t border-stone-700 md:grid-cols-8">
+  class="grid grid-cols-3 border-t border-stone-700 md:grid-cols-8">
   {
     prevItem ? (
       <a
@@ -44,7 +44,7 @@ const label = {
   <a
     href={`/${basePath}/`}
     aria-label={`View all ${contentType}`}
-    class="group relative block w-full place-content-center overflow-clip bg-stone-900/40 px-6 py-3 text-center font-medium text-stone-300 transition-colors duration-300 ease-in-out hover:text-stone-100 md:col-span-2">
+    class="group relative block w-full place-content-center overflow-clip border-x border-stone-700 bg-stone-900/40 px-6 py-3 text-center font-medium text-stone-300 transition-colors duration-300 ease-in-out hover:text-stone-100 md:col-span-2">
     <span class="relative z-10 block text-sm text-stone-400">{label.goTo}</span>
     <span class="relative z-10">{contentType}</span>
     <span
@@ -56,9 +56,9 @@ const label = {
       <a
         href={`/${basePath}/${nextItem.id}/`}
         aria-label={`Go to: ${nextItem.data.title}`}
-        class="group relative block w-full place-content-center overflow-clip bg-stone-900/40 px-6 py-3 text-right transition-colors duration-300 ease-in-out md:col-span-3">
-        <span class="relative z-10 hidden text-sm text-stone-400 sm:block">{label.next}</span>
-        <span class="relative z-10 hidden font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100 sm:block">
+        class="group relative z-10 block w-full place-content-center overflow-clip bg-stone-900/40 px-6 py-3 text-right transition-colors duration-300 ease-in-out md:col-span-3">
+        <span class="hidden relative z-10 text-sm text-stone-400 sm:block">{label.next}</span>
+        <span class="hidden relative z-10 font-medium text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-100 sm:block">
           {nextItem.data.title}
         </span>
         <ChevronR class={"relative z-10 ml-auto text-orange-600 group-hover:text-white sm:hidden"} />

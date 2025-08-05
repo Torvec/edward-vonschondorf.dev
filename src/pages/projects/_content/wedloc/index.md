@@ -27,4 +27,4 @@ A social media app for wedding photographers to share their work and allow clien
 
 ### Development
 
-Development story goes here
+Development story under development.

@@ -4,9 +4,11 @@ slug: "creating-this-blog"
 readTime: 5
 summary: "A complete build log of my minimalist, statically generated, Astro blog."
 pubDate: 2024-12-30
-# updatedDate: ""
+updatedDate: 2025-08-04
 # heroImage: ""
 ---
+
+**UPDATE AUG 04, 2025:** _This article was originally written on my previous blog that I have since replaced with my current portfolio site. The old repo for it can be found here: [GitHub Repository](https://github.com/Torvec/blog)_
 
 The impetus for creating this blog came from my desire to build a site using [Astro](https://astro.build/) and [Vue](https://vuejs.org/). My main goal was to gain more experience with different frameworks while having a platform to document my thoughts, share what I’ve learned, and talk about the things I’ve built along the way. By writing about these experiences, I hope to deepen my understanding of them and, hopefully, help others in the process. A secondary reason for starting this blog is that it gives me an easy way to share my ideas in long form across multiple platforms, opening the door for feedback and constructive criticism.
 

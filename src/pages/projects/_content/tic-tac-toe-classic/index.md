@@ -15,3 +15,7 @@ A simple and clean implementation of the classic 3x3 Tic Tac Toe game, built wit
 ### How to Play
 
 Click on any empty square to place your mark (X or O). The game alternates automatically between the two players. First to three in a row wins.
+
+### Development
+
+Development story under development.

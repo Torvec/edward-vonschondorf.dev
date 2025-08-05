@@ -27,7 +27,7 @@ const displayBtnText = type === "App" ? "Deployment" : "Play";
 
 <Layout title={title + " | Edward Vonschondorf"} description={description}>
   <article
-    class="relative z-10 container mx-auto my-auto max-w-3xl border-y border-stone-700 backdrop-blur-xs sm:rounded-3xl sm:border-x">
+    class="relative z-10 container mx-auto my-auto max-w-4xl overflow-clip border-y border-stone-700 backdrop-blur-xs sm:rounded-3xl sm:border-x">
     <div class="flex items-baseline justify-between border-b border-stone-700 bg-stone-900/40 px-6 py-3">
       <h1 class="text-xl font-bold text-stone-100">{title}</h1>
       <span class="text-sm text-stone-500">{type}</span>
@@ -58,33 +58,31 @@ const displayBtnText = type === "App" ? "Deployment" : "Play";
         </div>
       </div>
       <div class="sm:w-1/3">
-        <div>
-          <Image src={project.data.banner} alt={project.data.title} class={"size-full"} />
+        <Image src={project.data.banner} alt={project.data.title} class={"w-full border-b border-stone-700"} />
+        <div class="space-y-3 px-3 pt-3">
+          <p class="text-stone-300">{project.data.description}</p>
           <a
             href={deploy_url}
             target="_blank"
             rel="noopener noreferrer external"
-            class="block cursor-pointer border-y border-orange-800 bg-radial from-orange-500/0 to-orange-500/40 py-3 text-center font-bold text-orange-200 transition-colors duration-300 ease-in-out hover:from-orange-500/10 hover:to-orange-500/50 hover:text-white">
+            class="block cursor-pointer rounded-lg border border-orange-800 bg-orange-800/50 py-2 text-center text-sm font-bold text-orange-200 transition-colors duration-300 ease-in-out hover:bg-orange-800/75 hover:text-white">
             {displayBtnText}
           </a>
           <a
             href={repo_url}
             target="_blank"
             rel="noopener noreferrer external"
-            class="block cursor-pointer border-b border-stone-600 bg-radial from-orange-500/0 to-stone-500/40 py-3 text-center font-medium text-stone-200 transition-all duration-300 ease-in-out hover:from-stone-500/10 hover:to-stone-500/50 hover:text-white">
+            class="block cursor-pointer rounded-lg border border-stone-600 bg-stone-800/50 py-2 text-center text-sm font-medium text-stone-200 transition-all duration-300 ease-in-out hover:bg-stone-800/75 hover:text-white">
             Repository
           </a>
         </div>
-        <div class="space-y-6 p-6 sm:p-3">
-          <p class="text-stone-300">{project.data.description}</p>
-          <ul class="flex flex-wrap gap-3">
-            {
-              tech_stack.map((tech) => (
-                <li class="rounded-lg border px-3 py-1 text-sm font-medium text-stone-500">{tech}</li>
-              ))
-            }
-          </ul>
-        </div>
+        <ul class="flex flex-wrap gap-3 p-3">
+          {
+            tech_stack.map((tech) => (
+              <li class="rounded-lg border px-3 py-1 text-sm font-medium text-stone-500">{tech}</li>
+            ))
+          }
+        </ul>
       </div>
     </section>
     <section class="prose border-t border-stone-700 p-6">

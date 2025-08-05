@@ -25,3 +25,7 @@ Tic Tac Toe Classic and Tic Tac Toe Ultimate made with React.
 - Click a square in one of the smaller boards to make your move.
 - Your move determines the board your opponent must play in next.
 - Standard win rules apply—get three in a row on the _main_ board by winning individual boards.
+
+### Development
+
+Development story under development.

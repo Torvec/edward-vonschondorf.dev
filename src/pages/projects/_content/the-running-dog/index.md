@@ -32,3 +32,7 @@ Use the keyboard to control your fiery canine hero:
 Shooting enemies helps charge up your roll attack.
 
 Each level is timed, your goal is to survive until the timer runs out while defeating enemies and aiming for the highest score possible. Good luck!
+
+### Development
+
+Development story under development.

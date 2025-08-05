@@ -22,4 +22,4 @@ A video game deals site for gamers on a budget using third party API's. This was
 
 ### Development
 
-Development story goes here
+Development story under development.

@@ -21,3 +21,7 @@ A minimalist twist on the classic arcade shooter. Pilot a small ship through spa
 - **Space** – Shoot
 
 Avoid all asteroids and survive as long as you can. One hit ends the run.
+
+### Development
+
+Development story under development.

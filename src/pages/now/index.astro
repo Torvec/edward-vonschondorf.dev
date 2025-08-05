@@ -24,8 +24,8 @@ const then = posts.slice(1);
     </PageHeader>
     <div class="divide-y divide-stone-700 border-y border-stone-700 backdrop-blur-xs md:rounded-3xl md:border-x">
       <!-- NOW -->
-      <div class="flex gap-12 p-3 md:p-6">
-        <span class="block flex-shrink-0 font-medium text-stone-500">
+      <div class="flex gap-12 p-3 md:p-6 bg-stone-900/40">
+        <span class="block flex-shrink-0 font-medium text-stone-500 font-mono">
           <FormattedDate date={now.data.pubDate} />
         </span>
         <p class="w-full space-y-1.5 font-medium text-stone-300">
@@ -37,7 +37,7 @@ const then = posts.slice(1);
         {
           then.map((post) => (
             <div class="flex gap-12">
-              <span class="block flex-shrink-0 text-stone-500">
+              <span class="block flex-shrink-0 text-stone-500 font-mono">
                 <FormattedDate date={post.data.pubDate} />
               </span>
               <p class="w-full space-y-1.5 text-stone-300">

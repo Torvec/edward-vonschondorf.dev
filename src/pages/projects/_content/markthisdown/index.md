@@ -16,4 +16,4 @@ A minimalist, local-only, markdown editor that supports frontmatter (Yaml/Toml).
 
 ### Development
 
-Development story goes here
+Development story under development.
