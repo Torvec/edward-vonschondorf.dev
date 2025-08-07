@@ -2,16 +2,17 @@
 
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: "Fira Code Variable", monospace;
+}
+
 .bg-grid-lines {
   background-image:
     linear-gradient(var(--color-stone-800) 1px, transparent 1px),
     linear-gradient(to right, var(--color-stone-800) 1px, transparent 1px);
   @apply bg-stone-950 bg-size-[36px_36px];
 }
-
-/* html {
-  scrollbar-gutter: stable;
-} */
 
 /* STYLES FOR RENDERED BLOG POSTS */
 
