@@ -1,6 +1,6 @@
 ---
 title: "Loot Vault"
-description: "A video game deals site for gamers on a budget using third party API's."
+description: "A video game deals site for gamers on a budget."
 type: "App"
 banner: "./loot_vault_banner.jpg"
 images:

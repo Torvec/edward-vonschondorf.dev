@@ -1,6 +1,6 @@
 ---
 title: "Next Level Loot"
-description: "A Next.js app that aggregates and displays video game related data from multiple third party API's and allows users to search for deals, giveaways, and games with ease as well as save their favorite games to a wishlist."
+description: "A video game deals and giveaways aggregator that allows users to search and find their favorite games with ease and wishlist them. Loot Vault v2."
 type: "App"
 banner: "./next_level_loot_banner.jpg"
 images:

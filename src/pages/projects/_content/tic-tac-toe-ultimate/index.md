@@ -1,6 +1,6 @@
 ---
 title: "Tic Tac Toe Ultimate"
-description: "A strategic browser-based Ultimate Tic Tac Toe game. Play locally with a friend and outsmart your opponent across nine nested 3x3 grids."
+description: "Taking tic-tac-toe to the next level by expanding the game to nine 3×3 grids, where each move determines which board becomes active next, adding a dynamic and strategic twist to every turn."
 type: "Game"
 banner: "./tic_tac_toe_ultimate_banner.jpg"
 images: ["./tic_tac_toe_ultimate_1.jpg"]

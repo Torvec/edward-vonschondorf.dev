@@ -1,6 +1,6 @@
 ---
 title: "Asteroids"
-description: "A minimalist Asteroids-style shooter built with Python and Pygame. Rotate, thrust, and shoot to survive as long as possible—one hit ends the run."
+description: "The classic Asteroids game where you pilot a spaceship, dodge and destroy asteroids, and get the highest score."
 type: "Game"
 banner: "./asteroids_banner.jpg"
 images: ["./asteroids_1.jpg"]

@@ -1,6 +1,6 @@
 ---
 title: "Wedloc"
-description: "A social media app for wedding photographers to share their work and allow clients to interact with guests."
+description: "An all-in-one platform that connects wedding photographers with clients and their guests, creating a seamless space for sharing memories, engaging in real-time conversations, and manage bookings and payments."
 type: "App"
 banner: "./wedloc_banner.jpg"
 images: ["./wedloc_1.jpg", "./wedloc_2.jpg", "./wedloc_3.jpg", "./wedloc_4.jpg"]

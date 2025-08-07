@@ -1,6 +1,6 @@
 ---
 title: "The Running Dog"
-description: "Play as a super-powered dog in this browser-based action game built with vanilla JavaScript. Defeat enemies, survive timed levels, and climb the leaderboard."
+description: "A 2d side-scrolling action, runner game starring a dog with fiery projectile and roll abilities. Dodge, jump, and attack enemies, survive the clock, and get the highest score!"
 type: "Game"
 banner: "./the_running_dog_banner.jpg"
 images:

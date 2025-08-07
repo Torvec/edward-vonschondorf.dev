@@ -1,6 +1,6 @@
 ---
 title: "Tic Tac Toe Classic"
-description: "A classic 3x3 Tic Tac Toe game built with JavaScript. Take turns placing Xs and Os in a clean, responsive browser-based interface."
+description: "The classic 3 x 3 grid of tic-tac-toe, ready to play in the browser."
 type: "Game"
 banner: "./tic_tac_toe_classic_banner.jpg"
 images: ["./tic_tac_toe_classic_1.jpg"]
