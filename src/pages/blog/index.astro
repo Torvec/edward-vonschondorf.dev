@@ -21,10 +21,10 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
           <span class="block shrink-0 font-mono text-sm text-stone-400 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
             <FormattedDate date={post.data.pubDate} />
           </span>
-          <div class="grow space-y-1 overflow-clip">
-            <h2 class="font-bold text-pretty text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
+          <div class="w-full space-y-3 overflow-clip">
+            <h2 class="font-bold text-pretty text-stone-100 transition-colors duration-300 ease-in-out group-hover:text-white">
               <a href={`/blog/${post.id}/`} class="group flex items-center justify-between">
-                <span class="block transition-colors duration-300 ease-in-out group-hover:text-white">
+                <span class="block transition-colors duration-300 ease-in-out group-hover:text-orange-600">
                   {post.data.title}
                 </span>
                 <Chevron class="translate-x-full text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full" />

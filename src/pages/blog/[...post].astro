@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "@/layouts/layout.astro";
+import Prose from "@/components/prose.astro";
 import FormattedDate from "@/components/formatted-date.astro";
 import ContentNavigator from "@/components/content-navigator.astro";
 
@@ -37,9 +38,11 @@ const { Content } = await render(post);
       <p class="text-stone-300">{summary}</p>
     </div>
     <!-- BLOG CONTENT -->
-    <div class="prose border-t border-stone-700 p-6">
-      <Content />
-    </div>
+    <section class="border-t border-stone-700 p-6">
+      <Prose>
+        <Content />
+      </Prose>
+    </section>
     <ContentNavigator items={posts} currentIndex={index} basePath="blog" contentType="Posts" />
   </article>
 </Layout>

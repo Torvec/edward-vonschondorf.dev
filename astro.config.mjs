@@ -15,4 +15,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [mdx(), sitemap()],
+  markdown: {
+    syntaxHighlight: false,
+  },
 });

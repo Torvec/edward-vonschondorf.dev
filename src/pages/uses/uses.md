@@ -47,7 +47,7 @@ Rather than listing my experience in a random order, I’ve organized everything
 
 I'm a dedicated PC hardware enthusiast and have been building my own systems since middle school (with a brief hiatus during my time in the Navy). In recent years, I've developed an affinity for small form factor (SFF) builds, and this is my current setup:
 
-### Desktop ([PCPartPicker Parts List](https://pcpartpicker.com/list/MNsQLc))
+### Desktop - [Custom Built](https://pcpartpicker.com/list/MNsQLc)
 
 - **CPU:** AMD Ryzen 7 7800X3D
 - **GPU:** Asus ProArt OC GeForce RTX 4080
@@ -63,7 +63,7 @@ I'm a dedicated PC hardware enthusiast and have been building my own systems sin
   - **Headphones:** HiFiMAN Arya
   - **DAC:** JDS Labs Element II
 
-### Laptop ([Framework Laptop 13](https://frame.work/laptop13))
+### Laptop - [Framework Laptop 13](https://frame.work/laptop13)
 
 - **CPU:** Intel Core i7-1280P
 - **GPU:** Intel Iris Xe Graphics (Integrated)

@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/layout.astro";
+import Prose from "@/components/prose.astro";
 import PageHeader from "@/components/page-header.astro";
 import Content from "./uses.md";
 import UsesIcon from "@/assets/uses.svg";
@@ -15,8 +16,10 @@ import UsesIcon from "@/assets/uses.svg";
         class="font-medium text-stone-100 transition-colors duration-300 ease-in-out hover:text-orange-600">uses.tech</a
       >.
     </PageHeader>
-    <div class="prose border-y border-stone-700 px-3 pb-3 backdrop-blur-xs md:rounded-3xl md:border-x md:px-6 md:py-6">
-      <Content />
+    <div class="border-y border-stone-700 px-3 pb-3 backdrop-blur-xs md:rounded-3xl md:border-x md:px-6 md:py-6">
+      <Prose>
+        <Content />
+      </Prose>
     </div>
   </article>
 </Layout>
