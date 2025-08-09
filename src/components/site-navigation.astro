@@ -11,7 +11,7 @@ const isActive = (href: string) => {
 ---
 
 <nav
-  class="fixed bottom-0 z-20 w-full bg-stone-800/75 backdrop-blur-lg lg:top-0 lg:flex lg:h-screen lg:w-12 lg:flex-col lg:border-r lg:border-stone-700 lg:pb-6">
+  class="fixed bottom-0 z-20 w-full border-t bg-stone-800/50 backdrop-blur-lg lg:top-0 lg:flex lg:h-screen lg:w-12 lg:flex-col lg:border-r border-stone-700 lg:pb-6">
   <div
     id="menu"
     class="mb-6 hidden space-y-6 font-medium lg:mb-0 lg:flex lg:grow lg:flex-col lg:justify-between lg:space-y-0">
@@ -21,8 +21,8 @@ const isActive = (href: string) => {
           <a
             href={href}
             title={name}
-            class={`group flex items-center justify-center gap-3 py-6 hover:bg-stone-700/75 lg:h-12 lg:py-0 ${
-              isActive(href) ? "bg-stone-700/75 text-stone-300" : "text-stone-400"
+            class={`group flex items-center justify-center gap-3 py-6 hover:bg-stone-700/50 lg:h-12 lg:py-0 ${
+              isActive(href) ? "bg-stone-700/50 text-stone-300" : "text-stone-400"
             }`}>
             <span class="w-1/2">
               <Icon
@@ -43,7 +43,7 @@ const isActive = (href: string) => {
             target="_blank"
             rel="noopener noreferrer external"
             title={name}
-            class="group flex grow items-center justify-center py-6 text-stone-400 hover:bg-stone-700 lg:h-12 lg:grow-0 lg:py-0">
+            class="group flex grow items-center justify-center py-6 text-stone-400 hover:bg-stone-700/50 lg:h-12 lg:grow-0 lg:py-0">
             <Icon
               class="size-6 text-stone-400 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300 lg:mx-auto"
               aria-label={name}
@@ -55,7 +55,7 @@ const isActive = (href: string) => {
   </div>
   <button
     id="menu-toggle"
-    class="group z-20 block w-full cursor-pointer py-2 hover:bg-stone-700 lg:hidden"
+    class="group z-20 block w-full cursor-pointer py-3 hover:bg-stone-700/50 lg:hidden"
     aria-label="Toggle Menu">
     <OpenIcon id={"menu-open"} class={"size-6 text-stone-500 mx-auto group-hover:text-stone-300"} />
     <CloseIcon id={"menu-close"} class={"hidden text-stone-500 size-6 mx-auto group-hover:text-stone-300"} />
