@@ -10,32 +10,34 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
 ---
 
 <Layout title="Blog | Edward Vonschondorf" description="A place to share my work and the journey it took to get there.">
-  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 lg:space-y-3">
+  <article class="relative z-2 container mx-auto max-w-3xl space-y-1.5 md:space-y-3">
     <PageHeader header="Blog" Icon={BlogIcon}>
       Welcome to the blog section of my site where I share my insights, experiences, and lessons from my ongoing journey
       as a developer.
     </PageHeader>
     {
       posts.map((post) => (
-        <a
-          href={`/blog/${post.id}/`}
-          class="group flex w-full flex-col items-baseline border-y border-stone-700 p-3 text-pretty backdrop-blur-xs transition-colors duration-300 ease-in-out hover:bg-stone-900/40 sm:flex-row sm:gap-12 md:rounded-3xl md:border-x md:p-6">
-          <span class="block flex-shrink-0 font-mono text-stone-400 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
+        <div class="flex flex-col items-baseline gap-3 border-y border-stone-700 p-3 backdrop-blur-xs transition-colors duration-300 ease-in-out hover:bg-stone-900/40 md:flex-row md:gap-6 md:rounded-3xl md:border-x md:p-6">
+          <span class="block shrink-0 font-mono text-sm text-stone-400 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
             <FormattedDate date={post.data.pubDate} />
           </span>
-          <div class="flex w-full items-center justify-between overflow-clip">
+          <div class="grow space-y-1 overflow-clip">
+            <h2 class="font-bold text-pretty text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
+              <a href={`/blog/${post.id}/`} class="group flex items-center justify-between">
+                <span class="block transition-colors duration-300 ease-in-out group-hover:text-white">
+                  {post.data.title}
+                </span>
+                <Chevron class="translate-x-full text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full" />
+              </a>
+            </h2>
             <div class="space-y-1">
-              <span class="block font-bold text-pretty text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
-                {post.data.title}
-              </span>
               <p class="text-sm text-stone-300 transition-colors duration-300 ease-in-out group-hover:text-stone-200">
                 {post.data.summary}
               </p>
               <span class="font-mono text-sm text-stone-400">{post.data.readTime} min read</span>
             </div>
-            <Chevron class="translate-x-full text-orange-600 transition-transform duration-300 ease-in-out group-hover:-translate-x-full" />
           </div>
-        </a>
+        </div>
       ))
     }
   </article>

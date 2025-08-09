@@ -19,16 +19,17 @@ const then = posts.slice(1);
         href="https://sive.rs/nowff"
         target="_blank"
         rel="noopener noreferrer external"
-        class="font-medium text-stone-100 hover:text-orange-600">Derek Sivers /Now page movement</a
-      >.
+        class="font-medium text-stone-100 transition-colors duration-300 ease-in-out hover:text-orange-600">
+        Derek Sivers /Now page movement
+      </a>.
     </PageHeader>
     <div class="divide-y divide-stone-700 border-y border-stone-700 backdrop-blur-xs md:rounded-3xl md:border-x">
       <!-- NOW -->
-      <div class="flex gap-12 p-3 md:p-6 bg-stone-900/40">
-        <span class="block flex-shrink-0 font-medium text-stone-500 font-mono">
+      <div class="flex flex-col gap-3 bg-stone-900/40 p-3 md:flex-row md:gap-6 md:p-6">
+        <span class="block shrink-0 font-mono font-medium text-stone-400">
           <FormattedDate date={now.data.pubDate} />
         </span>
-        <p class="w-full space-y-1.5 font-medium text-stone-300">
+        <p class="w-full space-y-1.5 font-medium text-stone-100">
           {now.data.content.map((content) => <span class="block">{content}</span>)}
         </p>
       </div>
@@ -36,8 +37,8 @@ const then = posts.slice(1);
       <div class="space-y-6 p-3 md:p-6">
         {
           then.map((post) => (
-            <div class="flex gap-12">
-              <span class="block flex-shrink-0 text-stone-500 font-mono">
+            <div class="flex flex-col items-baseline gap-3 md:flex-row md:gap-6">
+              <span class="block shrink-0 font-mono text-sm text-stone-500">
                 <FormattedDate date={post.data.pubDate} />
               </span>
               <p class="w-full space-y-1.5 text-stone-300">
