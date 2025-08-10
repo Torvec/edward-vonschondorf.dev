@@ -9,7 +9,7 @@ const { currentPage } = Astro.props;
 ---
 
 <nav
-  class="fixed bottom-0 z-20 w-full border-t border-stone-700 bg-stone-800/60 backdrop-blur-lg lg:top-0 lg:flex lg:h-screen lg:w-12 lg:flex-col lg:border-r">
+  class="fixed inset-x-0 bottom-0 z-20 border-t border-stone-700 bg-stone-800/60 pb-[env(safe-area-inset-bottom)] backdrop-blur-lg lg:inset-x-auto lg:top-0 lg:bottom-auto lg:flex lg:h-screen lg:w-12 lg:flex-col lg:border-r lg:pb-0">
   <div id="menu" class="hidden lg:flex lg:grow lg:flex-col lg:justify-between">
     <div>
       <NavLink currentPage={currentPage} name={pageLinks[0].name} href={pageLinks[0].href} Icon={Logo} />
