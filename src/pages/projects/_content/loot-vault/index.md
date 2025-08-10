@@ -5,10 +5,10 @@ type: "App"
 banner: "./loot_vault_banner.jpg"
 images:
   [
-    "./loot_vault_1.jpg",
-    "./loot_vault_2.jpg",
-    "./loot_vault_3.jpg",
-    "./loot_vault_4.jpg",
+    "./loot_vault_01.jpg",
+    "./loot_vault_02.jpg",
+    "./loot_vault_03.jpg",
+    "./loot_vault_04.jpg",
   ]
 repo_url: "https://github.com/Torvec/Loot-Vault"
 deploy_url: "https://torvec.github.io/Loot-Vault/"

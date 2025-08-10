@@ -3,7 +3,13 @@ title: "Tic Tac Toe Ultimate"
 description: "Taking tic-tac-toe to the next level by expanding the game to nine 3×3 grids, where each move determines which board becomes active next, adding a dynamic and strategic twist to every turn."
 type: "Game"
 banner: "./tic_tac_toe_ultimate_banner.jpg"
-images: ["./tic_tac_toe_ultimate_1.jpg"]
+images:
+  [
+    "./tic_tac_toe_ultimate_01.jpg",
+    "./tic_tac_toe_ultimate_02.jpg",
+    "./tic_tac_toe_ultimate_03.jpg",
+    "./tic_tac_toe_ultimate_04.jpg",
+  ]
 repo_url: "https://github.com/Torvec/tic-tac-toe-ultimate"
 deploy_url: "https://tic-tac-toe-ultimate.pages.dev/"
 tech_stack: ["JavaScript"]

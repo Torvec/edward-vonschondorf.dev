@@ -5,10 +5,10 @@ type: "App"
 banner: "./task_titan_banner.jpg"
 images:
   [
-    "./task_titan_1.jpg",
-    "./task_titan_2.jpg",
-    "./task_titan_3.jpg",
-    "./task_titan_4.jpg",
+    "./task_titan_01.jpg",
+    "./task_titan_02.jpg",
+    "./task_titan_03.jpg",
+    "./task_titan_04.jpg",
   ]
 repo_url: "https://github.com/Torvec/Task-Titan"
 deploy_url: "https://task-titan-bec51c55ebe5.herokuapp.com/"

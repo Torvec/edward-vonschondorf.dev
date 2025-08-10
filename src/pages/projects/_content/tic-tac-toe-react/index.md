@@ -2,8 +2,14 @@
 title: "Tic Tac Toe React"
 description: "Combining the classic 3×3 tic-tac-toe with the strategic and dynamic 9×3×3 Ultimate mode, this version offers an enhanced user experience and a modern UI."
 type: "Game"
-banner: "./tic_tac_toe_react_thumbnail.jpg"
-images: ["./tic_tac_toe_react_1.jpg", "./tic_tac_toe_react_2.jpg"]
+banner: "./tic_tac_toe_react_banner.jpg"
+images:
+  [
+    "./tic_tac_toe_react_01.jpg",
+    "./tic_tac_toe_react_02.jpg",
+    "./tic_tac_toe_react_03.jpg",
+    "./tic_tac_toe_react_04.jpg",
+  ]
 repo_url: "https://github.com/Torvec/tic-tac-toe-react"
 deploy_url: "https://tic-tac-toe-react.edvonschondorf.workers.dev/"
 tech_stack: ["Vite", "React", "TypeScript", "Tailwind CSS"]

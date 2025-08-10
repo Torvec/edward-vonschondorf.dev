@@ -5,10 +5,10 @@ type: "App"
 banner: "./next_level_loot_banner.jpg"
 images:
   [
-    "./next_level_loot_1.jpg",
-    "./next_level_loot_2.jpg",
-    "./next_level_loot_3.jpg",
-    "./next_level_loot_4.jpg",
+    "./next_level_loot_01.jpg",
+    "./next_level_loot_02.jpg",
+    "./next_level_loot_03.jpg",
+    "./next_level_loot_04.jpg",
   ]
 repo_url: "https://github.com/Torvec/next-level-loot"
 deploy_url: "https://next-level-loot.vercel.app/"

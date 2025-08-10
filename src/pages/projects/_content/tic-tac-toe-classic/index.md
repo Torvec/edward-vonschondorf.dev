@@ -3,7 +3,13 @@ title: "Tic Tac Toe Classic"
 description: "The classic 3 x 3 grid of tic-tac-toe, ready to play in the browser."
 type: "Game"
 banner: "./tic_tac_toe_classic_banner.jpg"
-images: ["./tic_tac_toe_classic_1.jpg"]
+images:
+  [
+    "./tic_tac_toe_classic_01.jpg",
+    "./tic_tac_toe_classic_02.jpg",
+    "./tic_tac_toe_classic_03.jpg",
+    "./tic_tac_toe_classic_04.jpg",
+  ]
 repo_url: "https://github.com/Torvec/tic-tac-toe-classic"
 deploy_url: "https://tic-tac-toe-classic.pages.dev/"
 tech_stack: ["JavaScript"]

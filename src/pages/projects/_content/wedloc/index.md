@@ -3,7 +3,8 @@ title: "Wedloc"
 description: "An all-in-one platform that connects wedding photographers with clients and their guests, creating a seamless space for sharing memories, engaging in real-time conversations, and manage bookings and payments."
 type: "App"
 banner: "./wedloc_banner.jpg"
-images: ["./wedloc_1.jpg", "./wedloc_2.jpg", "./wedloc_3.jpg", "./wedloc_4.jpg"]
+images:
+  ["./wedloc_01.jpg", "./wedloc_02.jpg", "./wedloc_03.jpg", "./wedloc_04.jpg"]
 repo_url: "https://github.com/Torvec/wedloc"
 deploy_url: "https://wedloc-84c89e3ae29d.herokuapp.com/"
 tech_stack:
