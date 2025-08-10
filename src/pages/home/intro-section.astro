@@ -1,23 +1,28 @@
 ---
 import { Image } from "astro:assets";
-import profilePic from "@/assets/portrait_gray_transparent_bg.png";
+import profilePic from "@/assets/profile_pic.png";
+import qrCode from "@/assets/qr_code.svg";
 import { socialLinks } from "@/global-consts";
 
 const content = {
   profilePicAlt: "Profile picture of Edward Vonschondorf!",
   profilePicTitle: "It's-a-me, Edward Vonschondorf!",
+  qrAlt: "QR Code for https://edward-vonschondorf.dev",
+  qrTitle: "Scan Me",
   intro: "👋 Hey! I'm Edward Vonschondorf",
   intro2: "Software Developer (web/game) based in LA.",
 };
-const { profilePicAlt, profilePicTitle, intro, intro2 } = content;
+const { profilePicAlt, profilePicTitle, qrAlt, qrTitle, intro, intro2 } = content;
 ---
 
-<Image
-  src={profilePic}
-  alt={profilePicAlt}
-  title={profilePicTitle}
-  class={"max-w-48 sm:max-w-64 rounded-full mx-auto border-stone-700 border-2"}
-/>
+<button
+  id="profileToggle"
+  class="mx-auto block w-max cursor-pointer overflow-clip rounded-full border-2 border-stone-700 hover:border-stone-600">
+  <Image id={"profilePic"} src={profilePic} alt={profilePicAlt} title={profilePicTitle} class={"block max-w-64"} />
+  <div id={"qrCode"} class="hidden size-64 place-content-center bg-stone-950">
+    <Image src={qrCode} alt={qrAlt} title={qrTitle} class={"max-w-50 mx-auto"} />
+  </div>
+</button>
 <div class="text-center">
   <h1 class="text-lg font-semibold text-stone-100 sm:text-2xl">{intro}</h1>
   <h2 class="text-sm font-medium text-stone-300 sm:text-base">{intro2}</h2>
@@ -37,3 +42,19 @@ const { profilePicAlt, profilePicTitle, intro, intro2 } = content;
     )
   }
 </div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const profileToggle = document.getElementById("profileToggle");
+    const profilePic = document.getElementById("profilePic");
+    const qrCode = document.getElementById("qrCode");
+
+    profileToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      profilePic.classList.toggle("block");
+      profilePic.classList.toggle("hidden");
+      qrCode.classList.toggle("hidden");
+      qrCode.classList.toggle("block");
+    });
+  });
+</script>
