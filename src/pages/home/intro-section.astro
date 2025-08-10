@@ -25,9 +25,9 @@ const { profilePicAlt, profilePicTitle, intro, intro2 } = content;
 <div class="flex justify-center gap-6">
   {
     socialLinks.map(
-      ({ name, url, Icon }) =>
+      ({ name, href, Icon }) =>
         name !== "Email" && (
-          <a href={url} target="_blank" rel="noopener noreferrer external" title={name} class="group text-stone-500">
+          <a href={href} target="_blank" rel="noopener noreferrer external" title={name} class="group text-stone-500">
             <Icon
               class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
               aria-label={name}

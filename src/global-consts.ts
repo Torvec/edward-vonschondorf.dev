@@ -29,32 +29,32 @@ export const pageLinks = [
 export const socialLinks = [
   {
     name: "Email",
-    url: MY_EMAIL,
+    href: MY_EMAIL,
     Icon: Gmail,
   },
   {
     name: "GitHub",
-    url: "https://github.com/Torvec",
+    href: "https://github.com/Torvec",
     Icon: GitHub,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/edward-vonschondorf/",
+    href: "https://www.linkedin.com/in/edward-vonschondorf/",
     Icon: LinkedIn,
   },
   {
     name: "Bluesky",
-    url: "https://bsky.app/profile/edward-vonschondorf.dev",
+    href: "https://bsky.app/profile/edward-vonschondorf.dev",
     Icon: Bluesky,
   },
   {
     name: "Mastodon",
-    url: "https://mastodon.social/@edvonschondorf",
+    href: "https://mastodon.social/@edvonschondorf",
     Icon: Mastodon,
   },
   {
     name: "YouTube",
-    url: "https://www.youtube.com/@edward-vonschondorf-dev",
+    href: "https://www.youtube.com/@edward-vonschondorf-dev",
     Icon: YouTube,
   },
 ];
