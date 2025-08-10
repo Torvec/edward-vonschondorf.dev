@@ -1,0 +1,29 @@
+---
+import { MY_EMAIL, MY_RESUME } from "@/global-consts";
+
+const content = {
+  contactLabel: "Contact Me",
+  contactHref: MY_EMAIL,
+  resumeLabel: "My Resume",
+  resumeHref: MY_RESUME,
+};
+const { contactLabel, contactHref, resumeLabel, resumeHref } = content;
+---
+
+<a
+  href={contactHref}
+  class="group relative bg-orange-800/20 py-3 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white sm:py-6">
+  <span class="relative z-10 block text-sm sm:text-base">{contactLabel}</span>
+  <span
+    class="absolute inset-0 z-0 -translate-x-full bg-orange-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
+  ></span>
+</a>
+<a
+  href={resumeHref}
+  download
+  class="group relative bg-stone-800/40 py-3 transition-colors duration-200 ease-in-out hover:bg-stone-800/80 hover:text-white sm:py-6">
+  <span class="relative z-10 block text-sm sm:text-base">{resumeLabel}</span>
+  <span
+    class="absolute inset-0 z-0 translate-x-full bg-stone-700 transition-transform duration-200 ease-in group-hover:translate-x-0"
+  ></span>
+</a>

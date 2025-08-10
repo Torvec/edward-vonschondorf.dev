@@ -1,0 +1,28 @@
+---
+import { pageLinks } from "@/global-consts";
+import Chevron from "@/assets/chevron_r.svg";
+---
+
+{
+  pageLinks.map(
+    ({ name, href, Icon }) =>
+      name !== "Home" && (
+        <a
+          href={href}
+          class="group flex items-end justify-between bg-stone-900/40 p-6 transition-colors duration-200 ease-in-out hover:bg-stone-900">
+          <span class="block grow space-y-6">
+            <Icon
+              class="size-6 text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-white"
+              aria-label={name}
+            />
+            <span class="flex items-baseline justify-between">
+              <span class="font-medium text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-orange-600">
+                {name}
+              </span>
+              <Chevron class="size-3 text-orange-600 transition-transform duration-200 ease-in-out group-hover:translate-x-1" />
+            </span>
+          </span>
+        </a>
+      )
+  )
+}

@@ -1,28 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "@/layouts/layout.astro";
-import { socialLinks, pageLinks, MY_EMAIL, MY_RESUME } from "@/global-consts";
-import profilePic from "@/assets/portrait_gray_transparent_bg.png";
-import Chevron from "@/assets/chevron_r.svg";
-
-const content = {
-  intro: "👋 Hey! I'm Edward Vonschondorf",
-  subIntro: "Software Developer (web/game) based in LA.",
-  contact: {
-    label: "Contact Me",
-    href: MY_EMAIL,
-  },
-  resume: {
-    label: "My Resume",
-    href: MY_RESUME,
-  },
-  p1Header: "What I Do",
-  p1Content:
-    "I create things and solve problems by using JavaScript/TypeScript for both front-end and back-end development, with additional experience in Python and Go. I enjoy making everything from browser-based games with vanilla JavaScript to full-stack MERN applications and web-based desktop apps using Electron. I'm open to remote or on-site freelance contracts and full-time opportunities.",
-  p2Header: "Interests & Hobbies",
-  p2Content:
-    "I enjoy running, hiking, traveling, PC gaming, building custom PCs, cooking, writing (technical/fiction) and watching movies and anime.",
-};
+import IntroSection from "@/pages/home/intro-section.astro";
+import ButtonSection from "@/pages/home/button-section.astro";
+import AboutSection from "@/pages/home/about-section.astro";
+import PageLinksSection from "@/pages/home/page-links-section.astro";
 ---
 
 <Layout title="Software Developer | Edward Vonschondorf" description="Welcome to my little corner of the internets!">
@@ -30,91 +11,17 @@ const content = {
     class="z-10 mx-auto my-auto max-w-3xl overflow-clip rounded-xl border border-stone-700 backdrop-blur-xs md:rounded-3xl">
     <section
       class="space-y-6 border-b border-stone-700 bg-radial-[at_50%_25%] from-stone-800/70 to-transparent px-1.5 py-6 sm:p-6">
-      <Image
-        src={profilePic}
-        alt={"Profile picture of Edward Vonschondorf!"}
-        title={"It's-a-me, Edward Vonschondorf!"}
-        class={"max-w-48 sm:max-w-64 rounded-full mx-auto border-stone-700 border-2"}
-      />
-      <div class="text-center">
-        <h1 class="text-lg font-semibold text-stone-100 sm:text-2xl">{content.intro}</h1>
-        <h2 class="text-sm font-medium text-stone-300 sm:text-base">{content.subIntro}</h2>
-      </div>
-      <div class="flex justify-center gap-6">
-        {
-          socialLinks.map(
-            ({ name, url, Icon }) =>
-              name !== "Email" && (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer external"
-                  title={name}
-                  class="group text-stone-500">
-                  <Icon
-                    class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
-                    aria-label={name}
-                  />
-                </a>
-              )
-          )
-        }
-      </div>
+      <IntroSection />
     </section>
     <section
       class="grid grid-cols-2 divide-x divide-stone-700 border-b border-stone-700 text-center font-bold text-stone-100">
-      <a
-        href={content.contact.href}
-        class="group relative bg-orange-800/20 py-3 transition-colors duration-200 ease-in-out hover:bg-orange-800/50 hover:text-white sm:py-6">
-        <span class="relative z-10 block text-sm sm:text-base">{content.contact.label}</span>
-        <span
-          class="absolute inset-0 z-0 -translate-x-full bg-orange-800 transition-transform duration-200 ease-in group-hover:translate-x-0"
-        ></span>
-      </a>
-      <a
-        href={content.resume.href}
-        download
-        class="group relative bg-stone-800/40 py-3 transition-colors duration-200 ease-in-out hover:bg-stone-800/80 hover:text-white sm:py-6">
-        <span class="relative z-10 block text-sm sm:text-base">{content.resume.label}</span>
-        <span
-          class="absolute inset-0 z-0 translate-x-full bg-stone-700 transition-transform duration-200 ease-in group-hover:translate-x-0"
-        ></span>
-      </a>
+      <ButtonSection />
     </section>
     <section class="space-y-6 border-b border-stone-700 px-3 py-6 sm:p-6">
-      <div class="space-y-1.5">
-        <h3 class="text-lg font-bold text-stone-100">{content.p1Header}</h3>
-        <p class="text-stone-300">{content.p1Content}</p>
-      </div>
-      <div class="space-y-1.5">
-        <h3 class="text-lg font-bold text-stone-100">{content.p2Header}</h3>
-        <p class="text-stone-300">{content.p2Content}</p>
-      </div>
+      <AboutSection />
     </section>
     <section class="grid grid-cols-2 divide-x divide-y divide-stone-700 sm:grid-cols-4 sm:divide-y-0">
-      {
-        pageLinks.map(
-          ({ name, href, Icon }) =>
-            name !== "Home" && (
-              <a
-                href={href}
-                class="group flex items-end justify-between bg-stone-900/40 p-6 transition-colors duration-200 ease-in-out hover:bg-stone-900">
-                <span class="block grow space-y-6">
-                  <Icon
-                    class="size-6 text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-white"
-                    aria-label={name}
-                  />
-                  <span class="flex items-baseline justify-between">
-                    <span class="font-medium text-stone-100 transition-colors duration-200 ease-in-out group-hover:text-orange-600">
-                      {name}
-                    </span>
-                    <Chevron class="size-3 text-orange-600 transition-transform duration-200 ease-in-out group-hover:translate-x-1" />
-                  </span>
-                </span>
-              </a>
-            )
-        )
-      }
+      <PageLinksSection />
     </section>
   </article>
 </Layout>
