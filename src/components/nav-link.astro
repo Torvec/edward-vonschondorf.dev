@@ -1,5 +1,5 @@
 ---
-const { currentPage, href, name, Icon } = Astro.props;
+const { currentPage, href, isExternal, name, Icon } = Astro.props;
 const isActive = (href: string) => {
   return (href === "/" && currentPage === "/") || (href !== "/" && currentPage.startsWith(href));
 };
@@ -7,6 +7,8 @@ const isActive = (href: string) => {
 
 <a
   href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener noreferrer" : undefined}
   class={`group text-sm relative flex items-center gap-3 py-6 pl-6 hover:bg-stone-700/60 lg:h-12 lg:py-0 lg:pl-0 ${
     isActive(href) ? "bg-stone-700/60 text-orange-500" : "text-stone-300"
   }`}>
