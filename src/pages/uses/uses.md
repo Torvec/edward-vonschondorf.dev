@@ -1,11 +1,11 @@
 ---
 pubDate: 2025-08-04
-updateDate: 2025-08-05
+updateDate: 2025-08-17
 ---
 
 ## Languages, Frameworks, Libraries, & Runtimes, oh my!
 
-Rather than listing my experience in a random order, I’ve organized everything from most to least familiar to better highlight what I’m most comfortable working with.
+Rather than listing my experience in a random order, I’ve organized everything from most to least familiar to better highlight what I’m most comfortable working with currently.
 
 **Programming languages**
 
@@ -32,16 +32,20 @@ Rather than listing my experience in a random order, I’ve organized everything
 ## Software
 
 - **Operating System:** Microsoft Windows 11 Home _(Desktop & Laptop)_
-  - Windows Subsystem for Linux (WSL) Ubuntu _(Desktop Only)_
+  - Windows Subsystem for Linux (WSL) Ubuntu 24.04 _(Desktop Only)_
 - **Code Editor:** Visual Studio Code
 - **Image Editing/Asset Creation:**
-  - Figma Design
+  - Figma
   - Irfanview
   - GIMP
   - Aseprite
 - **Planning/Diagramming:**
   - Excalidraw
   - Figma Figjam
+- **Communication/Collaboration:**
+  - Slack
+  - Discord
+  - Zoom
 
 ## Hardware
 

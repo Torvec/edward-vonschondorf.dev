@@ -2,7 +2,8 @@
 import Layout from "@/layouts/layout.astro";
 import Prose from "@/components/prose.astro";
 import PageHeader from "@/components/page-header.astro";
-import Content from "./uses.md";
+import Content, { frontmatter } from "./uses.md";
+import FormattedDate from "@/components/formatted-date.astro";
 import UsesIcon from "@/assets/uses.svg";
 ---
 
@@ -17,6 +18,10 @@ import UsesIcon from "@/assets/uses.svg";
       >.
     </PageHeader>
     <div class="rounded-xl border border-stone-700 px-3 pb-3 backdrop-blur-xs md:rounded-3xl md:px-6 md:py-6">
+      <div class="flex justify-between font-mono text-sm text-stone-500">
+        <span>Published: <FormattedDate date={frontmatter.pubDate} /></span>
+        <span>Updated: <FormattedDate date={frontmatter.updateDate} /></span>
+      </div>
       <Prose>
         <Content />
       </Prose>
