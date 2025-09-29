@@ -12,8 +12,13 @@ const projects = (await getCollection("projects")).sort((a, b) => b.data.pubDate
 <Layout title="Projects | Edward Vonschondorf" description="My web development projects.">
   <article class="z-10 container mx-auto max-w-3xl space-y-1.5 lg:space-y-3">
     <PageHeader header="Projects" Icon={ProjectsIcon}>
-      All of my web and game development related projects are listed here. Feel free to try them out and look at the
-      source code!
+      Explore my featured web and game development projects. Try them out, browse the source code, and discover more on
+      my <a
+        href="https://github.com/Torvec"
+        target="_blank"
+        rel="noopener noreferrer external"
+        class="font-medium text-orange-500 transition-colors duration-300 ease-in-out hover:text-stone-100">GitHub</a
+      >.
     </PageHeader>
     <section class="columns-1 gap-3 sm:columns-2 lg:gap-6">
       {
