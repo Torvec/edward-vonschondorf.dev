@@ -1,6 +1,6 @@
 ---
 pubDate: 2025-08-04
-updateDate: 2025-08-17
+updateDate: 2025-09-29
 ---
 
 ## Languages, Frameworks, Libraries, & Runtimes, oh my!
@@ -15,7 +15,7 @@ Rather than listing my experience in a random order, I’ve organized everything
 
 - JavaScript: Astro.js --> React.js --> Next.js --> Electron.js --> Vue.js
 - CSS: Tailwind CSS --> Materialize --> Bulma CSS --> Material UI
-- Python: Flask
+- Python: Pygame-ce --> Flask
 
 **Databases**
 
@@ -51,11 +51,13 @@ Rather than listing my experience in a random order, I’ve organized everything
 
 I'm a dedicated PC hardware enthusiast and have been building my own systems since middle school (with a brief hiatus during my time in the Navy). In recent years, I've developed an affinity for small form factor (SFF) builds, and this is my current setup:
 
-### Desktop - [Custom Built](https://pcpartpicker.com/list/MNsQLc)
+### Desktop - [Custom Built](https://pcpartpicker.com/b/Y6Dqqs)
+
+![Desktop Pic](./desk_setup.jpg)
 
 - **CPU:** AMD Ryzen 7 7800X3D
 - **GPU:** Asus ProArt OC GeForce RTX 4080
-- **RAM:** G.Skill Flare X5 32 GB (2 x 16 GB) DDR5-6000 CL30
+- **RAM:** G.Skill Flare X5 64 GB (2 x 32 GB) DDR5-6000 CL28
 - **Storage:** Crucial P5 Plus 2 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive (x2)
 - **Motherboard:** Asus ROG STRIX B650E-I GAMING WIFI Mini ITX AM5
 - **PSU:** Corsair SF750 (2018) 750 W 80+ Platinum
