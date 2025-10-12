@@ -16,7 +16,7 @@ export const MY_ALIAS = "Torvec";
 
 export const MY_EMAIL = "mailto:me@edward-vonschondorf.dev";
 
-export const MY_RESUME = "edward_vonschondorf_resume_06MAY2025.pdf";
+export const MY_RESUME = "edward_vonschondorf_resume_v101225.pdf";
 
 export const pageLinks = [
   { name: "Home", href: "/", Icon: Logo },
