@@ -7,7 +7,6 @@ import Gmail from "@/assets/gmail.svg";
 import GitHub from "@/assets/github.svg";
 import LinkedIn from "@/assets/linkedin.svg";
 import Bluesky from "@/assets/bluesky.svg";
-import Mastodon from "@/assets/mastodon.svg";
 import YouTube from "@/assets/youtube.svg";
 
 export const MY_NAME = "Edward Vonschondorf";
@@ -50,12 +49,6 @@ export const socialLinks = [
     href: "https://bsky.app/profile/edward-vonschondorf.dev",
     external: true,
     Icon: Bluesky,
-  },
-  {
-    name: "Mastodon",
-    href: "https://mastodon.social/@edvonschondorf",
-    external: true,
-    Icon: Mastodon,
   },
   {
     name: "YouTube",
