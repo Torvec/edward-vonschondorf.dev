@@ -15,35 +15,32 @@ const content = {
 const { profilePicAlt, profilePicTitle, qrAlt, qrTitle, intro, intro2 } = content;
 ---
 
-<button
+<div
   id="profileToggle"
-  class="mx-auto block w-max cursor-pointer overflow-clip rounded-full border-2 border-stone-700 hover:border-stone-600">
+  class="mx-auto block w-max overflow-clip rounded-full border-2 border-stone-700 hover:border-stone-600">
   <Image id={"profilePic"} src={profilePic} alt={profilePicAlt} title={profilePicTitle} class={"block max-w-64"} />
   <div id={"qrCode"} class="hidden size-64 place-content-center bg-stone-950">
     <Image src={qrCode} alt={qrAlt} title={qrTitle} class={"max-w-50 mx-auto"} />
   </div>
-</button>
+</div>
 <div class="text-center">
   <h1 class="text-lg font-semibold text-stone-100 sm:text-2xl">{intro}</h1>
   <h2 class="text-sm font-medium text-stone-300 sm:text-base">{intro2}</h2>
 </div>
 <div class="flex justify-center gap-6">
   {
-    socialLinks.map(
-      ({ name, href, Icon }) =>
-        name !== "Email" && (
-          <a href={href} target="_blank" rel="noopener noreferrer external" title={name} class="group text-stone-500">
-            <Icon
-              class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
-              aria-label={name}
-            />
-          </a>
-        )
-    )
+    socialLinks.map(({ name, href, Icon }) => (
+      <a href={href} target="_blank" rel="noopener noreferrer external" title={name} class="group text-stone-500">
+        <Icon
+          class="mx-auto size-6 transition-all duration-300 ease-in-out group-hover:scale-120 group-hover:text-stone-300"
+          aria-label={name}
+        />
+      </a>
+    ))
   }
 </div>
 
-<script is:inline>
+<!-- <script is:inline>
   document.addEventListener("astro:page-load", () => {
     const profileToggle = document.getElementById("profileToggle");
     const profilePic = document.getElementById("profilePic");
@@ -57,4 +54,4 @@ const { profilePicAlt, profilePicTitle, qrAlt, qrTitle, intro, intro2 } = conten
       qrCode.classList.toggle("block");
     });
   });
-</script>
+</script> -->
